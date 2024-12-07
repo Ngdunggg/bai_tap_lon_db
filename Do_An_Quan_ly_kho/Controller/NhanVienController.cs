@@ -11,7 +11,7 @@ namespace Do_An_Quan_ly_kho.Controller
 {
     internal class NhanVienController
     {
-        private databaseDataContext db = new databaseDataContext();
+        private DatabaseDataContext db = new DatabaseDataContext();
         public FunctResult<List<NguoiDung>> GetAll()
         {
             FunctResult<List<NguoiDung>> rs = new FunctResult<List<NguoiDung>>();

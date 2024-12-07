@@ -13,7 +13,7 @@ namespace WinFormDemo
 {
     public partial class Login : Form
     {
-        private databaseDataContext db = new databaseDataContext();
+        private DatabaseDataContext db = new DatabaseDataContext();
         public Login()
         {
             InitializeComponent();

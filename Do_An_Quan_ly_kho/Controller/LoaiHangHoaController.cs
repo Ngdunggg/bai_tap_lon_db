@@ -10,7 +10,7 @@ namespace Do_An_Quan_ly_kho.Controller
 {
     internal class LoaiHangHoaController
     {
-        private databaseDataContext db = new databaseDataContext();
+        private DatabaseDataContext db = new DatabaseDataContext();
         public FunctResult<List<DanhMucSanPham>> GetAll()
         {
             FunctResult<List<DanhMucSanPham>> rs = new FunctResult<List<DanhMucSanPham>>();

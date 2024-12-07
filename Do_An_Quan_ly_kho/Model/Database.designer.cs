@@ -23,7 +23,7 @@ namespace Do_An_Quan_ly_kho.Model
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Do_an_quan_ly_kho")]
-	public partial class databaseDataContext : System.Data.Linq.DataContext
+	public partial class DatabaseDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -59,31 +59,31 @@ namespace Do_An_Quan_ly_kho.Model
     partial void DeleteSanPham(SanPham instance);
     #endregion
 		
-		public databaseDataContext() : 
+		public DatabaseDataContext() : 
 				base(global::Do_An_Quan_ly_kho.Properties.Settings.Default.Do_an_quan_ly_khoConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public databaseDataContext(string connection) : 
+		public DatabaseDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public databaseDataContext(System.Data.IDbConnection connection) : 
+		public DatabaseDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public databaseDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public DatabaseDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public databaseDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public DatabaseDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
