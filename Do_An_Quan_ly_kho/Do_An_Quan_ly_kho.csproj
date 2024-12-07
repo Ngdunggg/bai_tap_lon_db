@@ -156,13 +156,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\LoaiHangHoaController.cs" />
     <Compile Include="Controller\NhanVienController.cs" />
     <Compile Include="Model\Database.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Database.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Dbcontext.cs" />
     <Compile Include="Model\EnumErrCode.cs" />
     <Compile Include="Model\FunctResult.cs" />
     <Compile Include="View\FormHangHoa.cs">
