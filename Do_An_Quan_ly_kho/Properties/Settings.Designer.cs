@@ -55,5 +55,16 @@ namespace Do_An_Quan_ly_kho.Properties {
                 return ((string)(this["ahihiConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HOANGDUONG;Initial Catalog=Do_an_quan_ly_kho;Integrated Security=True" +
+            ";Encrypt=True;TrustServerCertificate=True")]
+        public string Do_an_quan_ly_khoConnectionString {
+            get {
+                return ((string)(this["Do_an_quan_ly_khoConnectionString"]));
+            }
+        }
     }
 }

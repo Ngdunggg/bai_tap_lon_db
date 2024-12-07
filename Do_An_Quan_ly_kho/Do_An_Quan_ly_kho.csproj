@@ -156,13 +156,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\LoaiHangHoaController.cs" />
     <Compile Include="Controller\NhanVienController.cs" />
-    <Compile Include="Model\Database.designer.cs">
+    <Compile Include="Model\database.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Database.dbml</DependentUpon>
+      <DependentUpon>database.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Dbcontext.cs" />
     <Compile Include="Model\EnumErrCode.cs" />
     <Compile Include="Model\FunctResult.cs" />
     <Compile Include="View\FormHangHoa.cs">
@@ -311,13 +311,13 @@
     <EmbeddedResource Include="View\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Model\Database.dbml">
+    <None Include="Model\database.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>Database.designer.cs</LastGenOutput>
+      <LastGenOutput>database.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Model\Database.dbml.layout">
-      <DependentUpon>Database.dbml</DependentUpon>
+    <None Include="Model\database.dbml.layout">
+      <DependentUpon>database.dbml</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
