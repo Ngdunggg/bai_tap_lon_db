@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLoaiHangHoa));
             this.checkBoxId = new System.Windows.Forms.CheckBox();
             this.txtTypeName = new System.Windows.Forms.TextBox();
-            this.txtTypeId = new System.Windows.Forms.TextBox();
             this.btnRefesh = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -41,15 +40,14 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dgvTypeCate = new System.Windows.Forms.DataGridView();
+            this.dgvType = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTypeCate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvType)).BeginInit();
             this.SuspendLayout();
             // 
             // checkBoxId
@@ -64,24 +62,16 @@
             this.checkBoxId.TabIndex = 21;
             this.checkBoxId.Text = "Tìm kiếm theo mã";
             this.checkBoxId.UseVisualStyleBackColor = true;
+            this.checkBoxId.Click += new System.EventHandler(this.checkBoxId_CheckedChanged);
             // 
             // txtTypeName
             // 
             this.txtTypeName.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTypeName.Location = new System.Drawing.Point(157, 287);
+            this.txtTypeName.Location = new System.Drawing.Point(157, 248);
             this.txtTypeName.Multiline = true;
             this.txtTypeName.Name = "txtTypeName";
             this.txtTypeName.Size = new System.Drawing.Size(272, 32);
             this.txtTypeName.TabIndex = 42;
-            // 
-            // txtTypeId
-            // 
-            this.txtTypeId.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTypeId.Location = new System.Drawing.Point(157, 249);
-            this.txtTypeId.Multiline = true;
-            this.txtTypeId.Name = "txtTypeId";
-            this.txtTypeId.Size = new System.Drawing.Size(272, 32);
-            this.txtTypeId.TabIndex = 41;
             // 
             // btnRefesh
             // 
@@ -89,13 +79,14 @@
             this.btnRefesh.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefesh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefesh.Image")));
             this.btnRefesh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefesh.Location = new System.Drawing.Point(157, 522);
+            this.btnRefesh.Location = new System.Drawing.Point(157, 549);
             this.btnRefesh.Name = "btnRefesh";
             this.btnRefesh.Size = new System.Drawing.Size(133, 48);
             this.btnRefesh.TabIndex = 40;
             this.btnRefesh.Text = " Làm mới";
             this.btnRefesh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRefesh.UseVisualStyleBackColor = true;
+            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
             // 
             // pictureBox1
             // 
@@ -112,13 +103,14 @@
             this.btnDelete.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(330, 522);
+            this.btnDelete.Location = new System.Drawing.Point(330, 549);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(99, 48);
             this.btnDelete.TabIndex = 39;
             this.btnDelete.Text = "     Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // label1
             // 
@@ -142,6 +134,7 @@
             this.btnSearch.Text = "    Tìm kiếm";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // checkBoxName
             // 
@@ -155,6 +148,7 @@
             this.checkBoxName.TabIndex = 24;
             this.checkBoxName.Text = "Tìm kiếm theo tên";
             this.checkBoxName.UseVisualStyleBackColor = true;
+            this.checkBoxName.Click += new System.EventHandler(this.checkBoxName_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -186,23 +180,14 @@
             this.btnEdit.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(330, 468);
+            this.btnEdit.Location = new System.Drawing.Point(330, 495);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(99, 48);
             this.btnEdit.TabIndex = 38;
             this.btnEdit.Text = "   Sửa";
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEdit.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 249);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 21);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "Mã loại hàng hóa *";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -210,7 +195,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(157, 468);
+            this.btnAdd.Location = new System.Drawing.Point(157, 495);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(133, 48);
             this.btnAdd.TabIndex = 37;
@@ -222,19 +207,17 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtTypeName);
-            this.groupBox1.Controls.Add(this.txtTypeId);
             this.groupBox1.Controls.Add(this.btnRefesh);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnEdit);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(-3, 17);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(441, 578);
+            this.groupBox1.Size = new System.Drawing.Size(441, 613);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin loại hàng hóa";
@@ -243,40 +226,43 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(4, 287);
+            this.label3.Location = new System.Drawing.Point(4, 248);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(156, 21);
             this.label3.TabIndex = 28;
             this.label3.Text = "Tên loại hàng hóa *";
             // 
-            // dgvTypeCate
+            // dgvType
             // 
-            this.dgvTypeCate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTypeCate.Location = new System.Drawing.Point(444, 175);
-            this.dgvTypeCate.Name = "dgvTypeCate";
-            this.dgvTypeCate.RowHeadersWidth = 51;
-            this.dgvTypeCate.RowTemplate.Height = 24;
-            this.dgvTypeCate.Size = new System.Drawing.Size(653, 418);
-            this.dgvTypeCate.TabIndex = 5;
+            this.dgvType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvType.Location = new System.Drawing.Point(444, 195);
+            this.dgvType.Name = "dgvType";
+            this.dgvType.RowHeadersWidth = 51;
+            this.dgvType.RowTemplate.Height = 24;
+            this.dgvType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvType.Size = new System.Drawing.Size(653, 435);
+            this.dgvType.TabIndex = 5;
+            this.dgvType.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvType_CellContentClick);
             // 
             // frmLoaiHangHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1102, 613);
+            this.ClientSize = new System.Drawing.Size(1102, 642);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dgvTypeCate);
+            this.Controls.Add(this.dgvType);
             this.Name = "frmLoaiHangHoa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLoaiHangHoa";
+            this.Load += new System.EventHandler(this.frmLoaiHangHoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTypeCate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvType)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -284,7 +270,6 @@
         #endregion
         private System.Windows.Forms.CheckBox checkBoxId;
         private System.Windows.Forms.TextBox txtTypeName;
-        private System.Windows.Forms.TextBox txtTypeId;
         private System.Windows.Forms.Button btnRefesh;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnDelete;
@@ -294,10 +279,9 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dgvTypeCate;
+        private System.Windows.Forms.DataGridView dgvType;
     }
 }
