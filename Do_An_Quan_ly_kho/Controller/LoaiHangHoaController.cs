@@ -64,7 +64,7 @@ namespace Do_An_Quan_ly_kho.Controller
                 rs.Data = loaihanghoa;
                 rs.ErrCode = EnumErrCode.Success;
                 rs.ErrDesc = "Thêm mới danh mục thành công.";
-            } 
+            }
             catch (Exception ex)
             {
                 rs.ErrCode = EnumErrCode.Error;

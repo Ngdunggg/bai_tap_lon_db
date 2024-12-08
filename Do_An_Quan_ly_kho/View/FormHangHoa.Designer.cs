@@ -43,7 +43,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtCategoryName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,9 +52,6 @@
             this.cbTypeOfCategory = new System.Windows.Forms.ComboBox();
             this.txtCategoryId = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.cbCategory = new System.Windows.Forms.ComboBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -83,6 +79,7 @@
             this.checkBoxId.TabIndex = 0;
             this.checkBoxId.Text = "Tìm kiếm theo mã";
             this.checkBoxId.UseVisualStyleBackColor = true;
+            this.checkBoxId.Click += new System.EventHandler(this.checkBoxId_CheckedChanged);
             // 
             // dgvCategory
             // 
@@ -92,8 +89,12 @@
             this.dgvCategory.Name = "dgvCategory";
             this.dgvCategory.RowHeadersWidth = 51;
             this.dgvCategory.RowTemplate.Height = 24;
+            this.dgvCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCategory.Size = new System.Drawing.Size(661, 453);
             this.dgvCategory.TabIndex = 5;
+            this.dgvCategory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategory_CellContentClick);
+            this.dgvCategory.SelectionChanged += new System.EventHandler(this.dgvCategory_SelectionChanged);
+            this.dgvCategory.Click += new System.EventHandler(this.dgvCategory_Click);
             // 
             // groupBox2
             // 
@@ -122,6 +123,7 @@
             this.btnSearch.Text = "    Tìm kiếm";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // checkBoxName
             // 
@@ -135,6 +137,7 @@
             this.checkBoxName.TabIndex = 2;
             this.checkBoxName.Text = "Tìm kiếm theo tên";
             this.checkBoxName.UseVisualStyleBackColor = true;
+            this.checkBoxName.Click += new System.EventHandler(this.checkBoxName_CheckedChanged);
             // 
             // btnRefesh
             // 
@@ -149,6 +152,7 @@
             this.btnRefesh.Text = " Làm mới";
             this.btnRefesh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRefesh.UseVisualStyleBackColor = true;
+            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
             // 
             // btnDelete
             // 
@@ -163,6 +167,7 @@
             this.btnDelete.Text = "     Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -177,6 +182,7 @@
             this.btnEdit.Text = "   Sửa";
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -196,7 +202,7 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(152, 396);
+            this.textBox5.Location = new System.Drawing.Point(152, 364);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(272, 32);
@@ -206,7 +212,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 402);
+            this.label6.Location = new System.Drawing.Point(6, 370);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 21);
             this.label6.TabIndex = 10;
@@ -215,7 +221,7 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(152, 358);
+            this.textBox4.Location = new System.Drawing.Point(152, 326);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(272, 32);
@@ -225,27 +231,16 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 364);
+            this.label5.Location = new System.Drawing.Point(6, 332);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 21);
             this.label5.TabIndex = 8;
             this.label5.Text = "Số Lượng *";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 326);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(128, 21);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Nhà Cung Cấp *";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
             // txtCategoryName
             // 
             this.txtCategoryName.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoryName.Location = new System.Drawing.Point(152, 282);
+            this.txtCategoryName.Location = new System.Drawing.Point(152, 288);
             this.txtCategoryName.Multiline = true;
             this.txtCategoryName.Name = "txtCategoryName";
             this.txtCategoryName.Size = new System.Drawing.Size(272, 32);
@@ -255,7 +250,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 288);
+            this.label3.Location = new System.Drawing.Point(6, 294);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(129, 21);
             this.label3.TabIndex = 4;
@@ -295,9 +290,6 @@
             this.groupBox1.Controls.Add(this.cbTypeOfCategory);
             this.groupBox1.Controls.Add(this.txtCategoryId);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.cbCategory);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btnRefesh);
             this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.btnEdit);
@@ -306,7 +298,6 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtCategoryName);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -349,34 +340,6 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "Mã Hàng Hóa *";
             // 
-            // cbCategory
-            // 
-            this.cbCategory.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(152, 322);
-            this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(272, 29);
-            this.cbCategory.TabIndex = 18;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(152, 434);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(272, 32);
-            this.textBox8.TabIndex = 17;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 440);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 21);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Ghi Chú";
-            // 
             // FormHangHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -389,6 +352,7 @@
             this.Name = "FormHangHoa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormHangHoa";
+            this.Load += new System.EventHandler(this.FormHangHoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -413,17 +377,13 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCategoryName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbTypeOfCategory;
         private System.Windows.Forms.TextBox txtCategoryId;
         private System.Windows.Forms.Label label8;
