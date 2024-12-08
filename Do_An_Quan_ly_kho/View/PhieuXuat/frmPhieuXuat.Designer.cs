@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhieuXuat));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtvPhieuBan = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -42,23 +42,27 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dtvChitiet = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvPhieuBan)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvChitiet)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dtvPhieuBan
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1395, 299);
-            this.dataGridView1.TabIndex = 0;
+            this.dtvPhieuBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtvPhieuBan.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dtvPhieuBan.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dtvPhieuBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtvPhieuBan.Location = new System.Drawing.Point(0, 4);
+            this.dtvPhieuBan.Name = "dtvPhieuBan";
+            this.dtvPhieuBan.RowHeadersWidth = 51;
+            this.dtvPhieuBan.RowTemplate.Height = 24;
+            this.dtvPhieuBan.Size = new System.Drawing.Size(1395, 299);
+            this.dtvPhieuBan.TabIndex = 0;
+            this.dtvPhieuBan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvPhieuBan_CellClick);
             // 
             // panel2
             // 
@@ -103,6 +107,7 @@
             this.btnSearch.Text = "    Tìm kiếm";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnDelete
             // 
@@ -194,23 +199,26 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.dataGridView2);
+            this.panel1.Controls.Add(this.dtvChitiet);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dtvPhieuBan);
             this.panel1.Location = new System.Drawing.Point(3, 110);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1398, 696);
             this.panel1.TabIndex = 2;
             // 
-            // dataGridView2
+            // dtvChitiet
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(4, 337);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(1391, 313);
-            this.dataGridView2.TabIndex = 2;
+            this.dtvChitiet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtvChitiet.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtvChitiet.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtvChitiet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtvChitiet.Location = new System.Drawing.Point(4, 337);
+            this.dtvChitiet.Name = "dtvChitiet";
+            this.dtvChitiet.RowHeadersWidth = 51;
+            this.dtvChitiet.RowTemplate.Height = 24;
+            this.dtvChitiet.Size = new System.Drawing.Size(1391, 313);
+            this.dtvChitiet.TabIndex = 2;
             // 
             // label1
             // 
@@ -232,19 +240,20 @@
             this.Name = "frmPhieuXuat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPhieuXuat";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmPhieuXuat_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtvPhieuBan)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvChitiet)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtvPhieuBan;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnSearch;
@@ -257,7 +266,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dtvChitiet;
         private System.Windows.Forms.Label label1;
     }
 }

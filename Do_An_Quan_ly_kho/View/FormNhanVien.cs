@@ -93,10 +93,7 @@ namespace Do_An_Quan_ly_kho
             clearInput();
         }
 
-        private void dgvUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
+        
 
         private void dgvUser_Click(object sender, EventArgs e)
         {

@@ -55,5 +55,16 @@ namespace Do_An_Quan_ly_kho.Properties {
                 return ((string)(this["ahihiConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-TNO9IKC\\SQLEXPRESS;Initial Catalog=ahihi;Integrated Security=" +
+            "True;Encrypt=True;TrustServerCertificate=True")]
+        public string ahihiConnectionString1 {
+            get {
+                return ((string)(this["ahihiConnectionString1"]));
+            }
+        }
     }
 }

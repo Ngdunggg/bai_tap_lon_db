@@ -157,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\NhanVienController.cs" />
+    <Compile Include="Controller\PhieuBanController.cs" />
     <Compile Include="Model\Database.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
