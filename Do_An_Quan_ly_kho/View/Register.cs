@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Do_An_Quan_ly_kho.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,12 +31,24 @@ namespace WinFormDemo
             this.Close();
         }
 
-        private void cbShowPass_CheckedChanged(object sender, EventArgs e)
-        {
-            txtPassword.PasswordChar = cbShowPass.Checked ? '\0' : '*';
-        }
+       
 
         private void btnSignup_Register_Click(object sender, EventArgs e)
+        {
+            string username = txtUsername.Text;
+            string password = txtPassword.Text; 
+            string Epassword = textBox1.Text;
+            RegisterController t =  new RegisterController();
+            t.XulyDangKi(username, password, Epassword,this);
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }
