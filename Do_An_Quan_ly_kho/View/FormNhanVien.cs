@@ -249,5 +249,15 @@ namespace Do_An_Quan_ly_kho
                 btnDelete.Enabled = true;
             }
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUserId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -34,9 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvReceiptInfor = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -70,6 +68,7 @@
             this.dgvReceiptInSite.RowTemplate.Height = 24;
             this.dgvReceiptInSite.Size = new System.Drawing.Size(1391, 327);
             this.dgvReceiptInSite.TabIndex = 2;
+            this.dgvReceiptInSite.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReceiptInSite_CellContentClick);
             // 
             // label1
             // 
@@ -90,13 +89,12 @@
             this.dgvReceiptInfor.RowTemplate.Height = 24;
             this.dgvReceiptInfor.Size = new System.Drawing.Size(1395, 299);
             this.dgvReceiptInfor.TabIndex = 0;
+            this.dgvReceiptInfor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReceiptInfor_CellContentClick);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel2.Controls.Add(this.btnPrint);
             this.panel2.Controls.Add(this.btnSearch);
-            this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.btnEdit);
             this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Controls.Add(this.label4);
@@ -108,21 +106,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1396, 114);
             this.panel2.TabIndex = 1;
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrint.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrint.Location = new System.Drawing.Point(581, 27);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(148, 40);
-            this.btnPrint.TabIndex = 31;
-            this.btnPrint.Text = "In Phiếu";
-            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnSearch
             // 
@@ -136,20 +119,7 @@
             this.btnSearch.Text = "    Tìm kiếm";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(394, 27);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(146, 40);
-            this.btnDelete.TabIndex = 14;
-            this.btnDelete.Text = "Xóa Phiếu";
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnEdit
             // 
@@ -264,10 +234,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnPrint;
     }
 }

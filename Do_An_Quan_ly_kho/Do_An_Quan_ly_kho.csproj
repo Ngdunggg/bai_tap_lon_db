@@ -157,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\NhanVienController.cs" />
+    <Compile Include="Controller\PhieuNhapController.cs" />
     <Compile Include="Model\Database.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -165,6 +166,7 @@
     <Compile Include="Model\Dbcontext.cs" />
     <Compile Include="Model\EnumErrCode.cs" />
     <Compile Include="Model\FunctResult.cs" />
+    <Compile Include="Model\ViewModel\PhieuNhapHangViewModel.cs" />
     <Compile Include="View\FormHangHoa.cs">
       <SubType>Form</SubType>
     </Compile>
