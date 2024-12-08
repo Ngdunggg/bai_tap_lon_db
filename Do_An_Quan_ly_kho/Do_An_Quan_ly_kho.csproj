@@ -162,6 +162,7 @@
     <Compile Include="Controller\HangHoaController.cs" />
     <Compile Include="Controller\LoaiHangHoaController.cs" />
     <Compile Include="Controller\DashboardController.cs" />
+    <Compile Include="Controller\KhachHangController.cs" />
     <Compile Include="Controller\NhanVienController.cs" />
     <Compile Include="Controller\HangHoaController.cs" />
     <Compile Include="Model\Database.designer.cs">
@@ -267,6 +268,9 @@
     <Compile Include="View\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <None Include="Model\Database.dbml.layout">
+      <DependentUpon>Database.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="View\FormHangHoa.resx">
       <DependentUpon>FormHangHoa.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -326,9 +330,6 @@
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Database.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Model\Database.dbml.layout">
-      <DependentUpon>Database.dbml</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
