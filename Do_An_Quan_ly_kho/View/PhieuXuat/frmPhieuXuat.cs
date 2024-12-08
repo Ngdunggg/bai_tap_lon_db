@@ -22,6 +22,9 @@ namespace Do_An_Quan_ly_kho.View.PhieuXuat
         PhieuBanController phieuBan = new PhieuBanController();
         private void frmPhieuXuat_Load(object sender, EventArgs e)
         {
+            dtvPhieuBan.AutoGenerateColumns = true;
+            dtvPhieuBan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtvPhieuBan.ReadOnly = true;
             var pb = phieuBan.GetAll();
 
             switch (pb.ErrCode)
@@ -38,20 +41,24 @@ namespace Do_An_Quan_ly_kho.View.PhieuXuat
             }
 
             dtvPhieuBan.ClearSelection();
-            btnEdit.Enabled = false;
-            btnDelete.Enabled = false;
+/*            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;*/
 
             //dtvPhieuBan.SelectionChanged += dtvPhieuBan_Select;
 
-            dtvPhieuBan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            dtvPhieuBan.ReadOnly = true;
+/*            dtvPhieuBan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dtvPhieuBan.ReadOnly = true;*/
         }
 
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            this.Hide(); 
+
             FormThemPhieuXuat frm = new FormThemPhieuXuat();
-            frm.ShowDialog();
+            frm.ShowDialog(); 
+
+            this.Close();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -86,12 +93,14 @@ namespace Do_An_Quan_ly_kho.View.PhieuXuat
                             break;
                     }
                     dtvChitiet.ClearSelection();
-                    btnEdit.Enabled = true;
-                    btnDelete.Enabled = true;
+  /*                  btnEdit.Enabled = true;
+                    btnDelete.Enabled = true;*/
 
                     //dtvPhieuBan.SelectionChanged += dtvPhieuBan_Select;
 
-                    dtvChitiet.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+                    dtvChitiet.AutoGenerateColumns = true;
+                    dtvChitiet.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dtvChitiet.RowTemplate.Height = 30;
                     dtvChitiet.ReadOnly = true;
                     //MessageBox.Show("Mã phiếu bán: " + MaPhieuBan.ToString());
                 }
@@ -126,6 +135,14 @@ namespace Do_An_Quan_ly_kho.View.PhieuXuat
             }
 
             dtvPhieuBan.ClearSelection();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMain frmMain = new frmMain();
+            frmMain.ShowDialog();
+            this.Close();   
         }
     }
 }

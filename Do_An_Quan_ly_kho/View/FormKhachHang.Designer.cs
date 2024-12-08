@@ -36,6 +36,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.checkBoxName = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkDescending = new System.Windows.Forms.CheckBox();
+            this.chkAscending = new System.Windows.Forms.CheckBox();
+            this.cbSortBy = new System.Windows.Forms.ComboBox();
+            this.btnSort = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.checkBoxId = new System.Windows.Forms.CheckBox();
@@ -50,10 +54,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnSort = new System.Windows.Forms.Button();
-            this.cbSortBy = new System.Windows.Forms.ComboBox();
-            this.chkAscending = new System.Windows.Forms.CheckBox();
-            this.chkDescending = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -152,6 +153,47 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm Kiếm";
+            // 
+            // chkDescending
+            // 
+            this.chkDescending.AutoSize = true;
+            this.chkDescending.Location = new System.Drawing.Point(250, 103);
+            this.chkDescending.Name = "chkDescending";
+            this.chkDescending.Size = new System.Drawing.Size(96, 22);
+            this.chkDescending.TabIndex = 37;
+            this.chkDescending.Text = "Giảm dần";
+            this.chkDescending.UseVisualStyleBackColor = true;
+            this.chkDescending.CheckedChanged += new System.EventHandler(this.chkDescending_CheckedChanged);
+            // 
+            // chkAscending
+            // 
+            this.chkAscending.AutoSize = true;
+            this.chkAscending.Location = new System.Drawing.Point(150, 103);
+            this.chkAscending.Name = "chkAscending";
+            this.chkAscending.Size = new System.Drawing.Size(94, 22);
+            this.chkAscending.TabIndex = 36;
+            this.chkAscending.Text = "Tăng dần";
+            this.chkAscending.UseVisualStyleBackColor = true;
+            this.chkAscending.CheckedChanged += new System.EventHandler(this.chkAscending_CheckedChanged);
+            // 
+            // cbSortBy
+            // 
+            this.cbSortBy.FormattingEnabled = true;
+            this.cbSortBy.Location = new System.Drawing.Point(14, 99);
+            this.cbSortBy.Name = "cbSortBy";
+            this.cbSortBy.Size = new System.Drawing.Size(121, 25);
+            this.cbSortBy.TabIndex = 35;
+            this.cbSortBy.SelectedIndexChanged += new System.EventHandler(this.cbSortBy_SelectedIndexChanged);
+            // 
+            // btnSort
+            // 
+            this.btnSort.Location = new System.Drawing.Point(369, 86);
+            this.btnSort.Name = "btnSort";
+            this.btnSort.Size = new System.Drawing.Size(106, 35);
+            this.btnSort.TabIndex = 34;
+            this.btnSort.Text = "Sắp xếp";
+            this.btnSort.UseVisualStyleBackColor = true;
+            this.btnSort.Click += new System.EventHandler(this.btnSort_Click);
             // 
             // btnSearch
             // 
@@ -260,6 +302,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btnRefesh);
             this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.btnEdit);
@@ -349,46 +392,19 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
-            // btnSort
+            // button1
             // 
-            this.btnSort.Location = new System.Drawing.Point(369, 86);
-            this.btnSort.Name = "btnSort";
-            this.btnSort.Size = new System.Drawing.Size(106, 35);
-            this.btnSort.TabIndex = 34;
-            this.btnSort.Text = "Sắp xếp";
-            this.btnSort.UseVisualStyleBackColor = true;
-            this.btnSort.Click += new System.EventHandler(this.btnSort_Click);
-            // 
-            // cbSortBy
-            // 
-            this.cbSortBy.FormattingEnabled = true;
-            this.cbSortBy.Location = new System.Drawing.Point(14, 99);
-            this.cbSortBy.Name = "cbSortBy";
-            this.cbSortBy.Size = new System.Drawing.Size(121, 25);
-            this.cbSortBy.TabIndex = 35;
-            this.cbSortBy.SelectedIndexChanged += new System.EventHandler(this.cbSortBy_SelectedIndexChanged);
-            // 
-            // chkAscending
-            // 
-            this.chkAscending.AutoSize = true;
-            this.chkAscending.Location = new System.Drawing.Point(150, 103);
-            this.chkAscending.Name = "chkAscending";
-            this.chkAscending.Size = new System.Drawing.Size(94, 22);
-            this.chkAscending.TabIndex = 36;
-            this.chkAscending.Text = "Tăng dần";
-            this.chkAscending.UseVisualStyleBackColor = true;
-            this.chkAscending.CheckedChanged += new System.EventHandler(this.chkAscending_CheckedChanged);
-            // 
-            // chkDescending
-            // 
-            this.chkDescending.AutoSize = true;
-            this.chkDescending.Location = new System.Drawing.Point(250, 103);
-            this.chkDescending.Name = "chkDescending";
-            this.chkDescending.Size = new System.Drawing.Size(96, 22);
-            this.chkDescending.TabIndex = 37;
-            this.chkDescending.Text = "Giảm dần";
-            this.chkDescending.UseVisualStyleBackColor = true;
-            this.chkDescending.CheckedChanged += new System.EventHandler(this.chkDescending_CheckedChanged);
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(163, 473);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(101, 39);
+            this.button1.TabIndex = 38;
+            this.button1.Text = "Trở về";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormKhachHang
             // 
@@ -441,5 +457,6 @@
         private System.Windows.Forms.ComboBox cbSortBy;
         private System.Windows.Forms.CheckBox chkAscending;
         private System.Windows.Forms.CheckBox chkDescending;
+        private System.Windows.Forms.Button button1;
     }
 }

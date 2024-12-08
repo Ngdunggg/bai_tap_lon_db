@@ -1,5 +1,7 @@
 ﻿using Do_An_Quan_ly_kho.Controller;
 using Do_An_Quan_ly_kho.Model;
+using Do_An_Quan_ly_kho.View.PhieuNhap;
+using Do_An_Quan_ly_kho.View.PhieuXuat;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -226,6 +228,16 @@ namespace Do_An_Quan_ly_kho
         private void dgvReceiptAdd_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            frmPhieuNhap frm = new frmPhieuNhap();
+            frm.ShowDialog();
+
+            this.Close();
         }
     }
 }

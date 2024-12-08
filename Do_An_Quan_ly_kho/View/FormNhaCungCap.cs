@@ -229,6 +229,16 @@ namespace Do_An_Quan_ly_kho
                 MessageBox.Show("Lỗi khi tìm kiếm: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            frmMain frm = new frmMain();
+            frm.ShowDialog();
+
+            this.Close();
+        }
     }
 }
     

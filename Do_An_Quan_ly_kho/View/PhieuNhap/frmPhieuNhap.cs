@@ -76,14 +76,18 @@ namespace Do_An_Quan_ly_kho.View.PhieuNhap
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormThemHangNhap frm = new FormThemHangNhap();
             frm.ShowDialog();
+            this.Close();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormSuaPhieu frm = new FormSuaPhieu();
             frm.ShowDialog();
+            this.Close();
         }
 
         private void dgvReceiptInfor_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -169,6 +173,16 @@ namespace Do_An_Quan_ly_kho.View.PhieuNhap
             btnEdit.Enabled = true;
 
             dgvReceiptInSite.DataSource = null;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            frmMain frm = new frmMain();
+            frm.ShowDialog();
+
+            this.Close();
         }
     }
 }

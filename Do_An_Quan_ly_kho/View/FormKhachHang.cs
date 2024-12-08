@@ -302,5 +302,15 @@ namespace Do_An_Quan_ly_kho
             if (chkDescending.Checked)
                 chkAscending.Checked = false;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            frmMain frm = new frmMain();
+            frm.ShowDialog();
+
+            this.Close();
+        }
     }
 }

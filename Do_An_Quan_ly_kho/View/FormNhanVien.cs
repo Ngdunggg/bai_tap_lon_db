@@ -256,5 +256,15 @@ namespace Do_An_Quan_ly_kho
         {
 
         }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            frmMain frm = new frmMain();
+            frm.ShowDialog();
+
+            this.Close();
+        }
     }
 }

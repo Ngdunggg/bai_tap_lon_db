@@ -31,10 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhieuXuat));
             this.dtvPhieuBan = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,6 +41,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtvChitiet = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtvPhieuBan)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -56,85 +54,46 @@
             this.dtvPhieuBan.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dtvPhieuBan.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtvPhieuBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtvPhieuBan.Location = new System.Drawing.Point(0, 4);
+            this.dtvPhieuBan.Location = new System.Drawing.Point(0, 3);
+            this.dtvPhieuBan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtvPhieuBan.Name = "dtvPhieuBan";
             this.dtvPhieuBan.RowHeadersWidth = 51;
             this.dtvPhieuBan.RowTemplate.Height = 24;
-            this.dtvPhieuBan.Size = new System.Drawing.Size(1395, 299);
+            this.dtvPhieuBan.Size = new System.Drawing.Size(1046, 243);
             this.dtvPhieuBan.TabIndex = 0;
             this.dtvPhieuBan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvPhieuBan_CellClick);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel2.Controls.Add(this.btnPrint);
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.btnSearch);
-            this.panel2.Controls.Add(this.btnDelete);
-            this.panel2.Controls.Add(this.btnEdit);
             this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.dateTimePicker2);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(5, -2);
+            this.panel2.Location = new System.Drawing.Point(4, -2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1396, 114);
+            this.panel2.Size = new System.Drawing.Size(1047, 93);
             this.panel2.TabIndex = 3;
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrint.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrint.Location = new System.Drawing.Point(582, 30);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(148, 40);
-            this.btnPrint.TabIndex = 31;
-            this.btnPrint.Text = "In Phiếu";
-            this.btnPrint.UseVisualStyleBackColor = true;
             // 
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(1223, 30);
+            this.btnSearch.Location = new System.Drawing.Point(917, 24);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(142, 40);
+            this.btnSearch.Size = new System.Drawing.Size(106, 32);
             this.btnSearch.TabIndex = 30;
             this.btnSearch.Text = "    Tìm kiếm";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(395, 30);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(148, 40);
-            this.btnDelete.TabIndex = 14;
-            this.btnDelete.Text = "Xóa Phiếu";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(213, 30);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(148, 40);
-            this.btnEdit.TabIndex = 13;
-            this.btnEdit.Text = "Sửa Phiếu";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -142,9 +101,10 @@
             this.btnAdd.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(21, 30);
+            this.btnAdd.Location = new System.Drawing.Point(16, 24);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(148, 40);
+            this.btnAdd.Size = new System.Drawing.Size(174, 32);
             this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "Lập Phiếu";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -154,9 +114,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(835, 21);
+            this.label4.Location = new System.Drawing.Point(626, 17);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 20);
+            this.label4.Size = new System.Drawing.Size(64, 17);
             this.label4.TabIndex = 11;
             this.label4.Text = "Từ ngày:";
             // 
@@ -164,35 +125,39 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(835, 63);
+            this.label3.Location = new System.Drawing.Point(626, 51);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 20);
+            this.label3.Size = new System.Drawing.Size(73, 17);
             this.label3.TabIndex = 10;
             this.label3.Text = "Đến ngày:";
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(936, 17);
+            this.dateTimePicker2.Location = new System.Drawing.Point(702, 14);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(268, 24);
+            this.dateTimePicker2.Size = new System.Drawing.Size(202, 21);
             this.dateTimePicker2.TabIndex = 9;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(936, 63);
+            this.dateTimePicker1.Location = new System.Drawing.Point(702, 51);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(268, 24);
+            this.dateTimePicker1.Size = new System.Drawing.Size(202, 21);
             this.dateTimePicker1.TabIndex = 8;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 89);
+            this.label2.Location = new System.Drawing.Point(12, 72);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 20);
+            this.label2.Size = new System.Drawing.Size(127, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Thông tin phiếu:";
             // 
@@ -202,9 +167,10 @@
             this.panel1.Controls.Add(this.dtvChitiet);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dtvPhieuBan);
-            this.panel1.Location = new System.Drawing.Point(3, 110);
+            this.panel1.Location = new System.Drawing.Point(2, 89);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1398, 696);
+            this.panel1.Size = new System.Drawing.Size(1048, 566);
             this.panel1.TabIndex = 2;
             // 
             // dtvChitiet
@@ -213,30 +179,47 @@
             this.dtvChitiet.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtvChitiet.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtvChitiet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtvChitiet.Location = new System.Drawing.Point(4, 337);
+            this.dtvChitiet.Location = new System.Drawing.Point(3, 274);
+            this.dtvChitiet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtvChitiet.Name = "dtvChitiet";
             this.dtvChitiet.RowHeadersWidth = 51;
             this.dtvChitiet.RowTemplate.Height = 24;
-            this.dtvChitiet.Size = new System.Drawing.Size(1391, 313);
+            this.dtvChitiet.Size = new System.Drawing.Size(1043, 254);
             this.dtvChitiet.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 314);
+            this.label1.Location = new System.Drawing.Point(14, 255);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 20);
+            this.label1.Size = new System.Drawing.Size(170, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Thông tin trong phiếu:";
             // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(267, 24);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(153, 32);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Trở về";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmPhieuXuat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1404, 810);
+            this.ClientSize = new System.Drawing.Size(1053, 658);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmPhieuXuat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPhieuXuat";
@@ -255,10 +238,7 @@
 
         private System.Windows.Forms.DataGridView dtvPhieuBan;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -268,5 +248,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dtvChitiet;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -14,7 +14,7 @@ namespace Do_An_Quan_ly_kho.Controller
         private DatabaseDataContext _db = new DatabaseDataContext();
         public int getTotalUsers()
         {
-            var totalUser = this._db.NguoiDungs.Count();
+            var totalUser = this._db.KhachHangs.Count();
             return totalUser;
         }
 

@@ -39,51 +39,66 @@ namespace Do_An_Quan_ly_kho
 
         private void thôngTinHàngHóaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormHangHoa frm = new FormHangHoa();
             frm.Show();
+            this.Close();
         }
 
         private void thôngTinNhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormNhaCungCap frm = new FormNhaCungCap();
             frm.Show();
+            this.Close();
         }
 
         private void thôngTinNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormNhanVien frm = new FormNhanVien();
             frm.Show();
+            this.Close();
         }
 
         private void phiếuNhậpToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmPhieuNhap frm = new frmPhieuNhap();
             frm.Show();
+            this.Close();
         }
 
         private void phiếuXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmPhieuXuat frm = new frmPhieuXuat();
             frm.Show();
+            this.Close();
         }
 
         private void thôngTinKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormKhachHang frm = new FormKhachHang();
             frm.Show();
+            this.Close();
         }
 
         private void thôngTinLoạiHàngHóaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmLoaiHangHoa frm = new frmLoaiHangHoa();
             frm.Show();
+            this.Close();
         }
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Login login = new Login();
             login.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -134,7 +149,7 @@ namespace Do_An_Quan_ly_kho
                             Bieudo.Series["User"].Points[i].Label = item.SupplierCount.ToString();
                             Color gradientColor = Color.FromArgb((i * 40) % 256, (i * 80) % 256, (i * 120) % 256);
                             Bieudo.Series["User"].Points[i].Color = gradientColor;
-                            Bieudo.Series["User"].Points[i].AxisLabel = "T" + (i+1);
+                            Bieudo.Series["User"].Points[i].AxisLabel = "T" + item.Month;
                             i++;
                         }
                         break;
@@ -151,7 +166,7 @@ namespace Do_An_Quan_ly_kho
                             Bieudo.Series["User"].Points[i].Label = item.CustomerCount.ToString();
                             Color gradientColor = Color.FromArgb((i * 40) % 256, (i * 80) % 256, (i * 120) % 256);
                             Bieudo.Series["User"].Points[i].Color = gradientColor;
-                            Bieudo.Series["User"].Points[i].AxisLabel = "T" + (i + 1);
+                            Bieudo.Series["User"].Points[i].AxisLabel = "T" + item.Month;
                             i++;
                         }
                         break;
@@ -168,7 +183,7 @@ namespace Do_An_Quan_ly_kho
                             Bieudo.Series["User"].Points[i].Label = item.ProductCount.ToString();
                             Color gradientColor = Color.FromArgb((i * 40) % 256, (i * 80) % 256, (i * 120) % 256);
                             Bieudo.Series["User"].Points[i].Color = gradientColor;
-                            Bieudo.Series["User"].Points[i].AxisLabel = "T" + (i + 1);
+                            Bieudo.Series["User"].Points[i].AxisLabel = "T" + item.Month;
                             i++;
                         }
                         break;
@@ -185,7 +200,7 @@ namespace Do_An_Quan_ly_kho
                             Bieudo.Series["User"].Points[i].Label = item.ProductCount.ToString();
                             Color gradientColor = Color.FromArgb((i * 40) % 256, (i * 80) % 256, (i * 120) % 256);
                             Bieudo.Series["User"].Points[i].Color = gradientColor;
-                            Bieudo.Series["User"].Points[i].AxisLabel = "T" + (i + 1);
+                            Bieudo.Series["User"].Points[i].AxisLabel = "T" + item.Month;
                             i++;
                         }
                         break;
@@ -202,7 +217,7 @@ namespace Do_An_Quan_ly_kho
                             Bieudo.Series["User"].Points[i].Label = item.Money.ToString();
                             Color gradientColor = Color.FromArgb((i * 40) % 256, (i * 80) % 256, (i * 120) % 256);
                             Bieudo.Series["User"].Points[i].Color = gradientColor;
-                            Bieudo.Series["User"].Points[i].AxisLabel = "T" + (i + 1);
+                            Bieudo.Series["User"].Points[i].AxisLabel = "T" + item.Month;
                             i++;
                         }
                         break;
@@ -219,7 +234,7 @@ namespace Do_An_Quan_ly_kho
                             Bieudo.Series["User"].Points[i].Label = item.Money.ToString();
                             Color gradientColor = Color.FromArgb((i * 40) % 256, (i * 80) % 256, (i * 120) % 256);
                             Bieudo.Series["User"].Points[i].Color = gradientColor;
-                            Bieudo.Series["User"].Points[i].AxisLabel = "T" + (i + 1);
+                            Bieudo.Series["User"].Points[i].AxisLabel = "T" + item.Month;
                             i++;
                         }
                         break;
@@ -264,6 +279,11 @@ namespace Do_An_Quan_ly_kho
             }
 
             selectYear.SelectedIndex = selectYear.Items.Count - 1;
+        }
+
+        private void totalUser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

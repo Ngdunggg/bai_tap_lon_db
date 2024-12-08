@@ -235,5 +235,15 @@ namespace Do_An_Quan_ly_kho.View.PhieuNhap
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            frmPhieuNhap frm = new frmPhieuNhap();
+            frm.ShowDialog();
+
+            this.Close();
+        }
     }
 }

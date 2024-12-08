@@ -14,6 +14,7 @@ namespace Do_An_Quan_ly_kho.Controller
 {
     internal class LoginController
     {
+        public static int userId;
          DatabaseDataContext db = new DatabaseDataContext();
         public void XulyLogin(string username , string password , Form loginn) {
 
@@ -31,12 +32,13 @@ namespace Do_An_Quan_ly_kho.Controller
                 else
                 {
                     var matkhau = db.NguoiDungs
-                 .Where(x => x.TenDangNhap == username)
-                 .Select(x => x.MatKhau)
-                 .FirstOrDefault();
-                    if (matkhau == password)
+               .Where(x => x.TenDangNhap == username)
+               .Select(x => new { x.MatKhau, x.MaNguoiDung })
+               .FirstOrDefault();
+                    if (matkhau.MatKhau == password)
                     {
                         MessageBox.Show("Đăng nhập thành công", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        userId = matkhau.MaNguoiDung;
                         frmMain dashboard = new frmMain();
                         dashboard.Show();
                         loginn.Hide();

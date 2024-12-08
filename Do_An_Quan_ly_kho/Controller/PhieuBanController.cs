@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data.Linq;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -106,17 +107,20 @@ namespace Do_An_Quan_ly_kho.Controller
             return rs;
         }
 
-        public FunctResult<List<int>> GetSanPham()
+        public FunctResult<List<Tuple<int, string>>> GetSanPham()
         {
-            FunctResult<List<int>> rs = new FunctResult<List<int>>();
+            FunctResult<List<Tuple<int, string>>> rs = new FunctResult<List<Tuple<int, string>>>();
 
             try
             {
-                var maSanPham = db.SanPhams.Select(sp => sp.MaSanPham).ToList();
+                // Lấy danh sách mã sản phẩm và tên sản phẩm
+                var sanPhams = db.SanPhams
+                                 .Select(sp => new Tuple<int, string>(sp.MaSanPham, sp.TenSanPham)) // MaSanPham và TenHangHoa
+                                 .ToList();
 
-                if (maSanPham.Any())
+                if (sanPhams.Any())
                 {
-                    rs.Data = maSanPham;
+                    rs.Data = sanPhams;
                     rs.ErrCode = EnumErrCode.Success;
                     rs.ErrDesc = "Lấy dữ liệu thành công";
                 }
@@ -130,13 +134,13 @@ namespace Do_An_Quan_ly_kho.Controller
             catch (Exception ex)
             {
                 rs.ErrCode = EnumErrCode.Error;
-                rs.ErrDesc = "Có lỗi xảy ra trong qúa trình lấy dữ liệu tài khoản. Chi tiết lỗi: " + ex.Message;
+                rs.ErrDesc = "Có lỗi xảy ra trong quá trình lấy dữ liệu sản phẩm. Chi tiết lỗi: " + ex.Message;
                 rs.Data = null;
-            };
-
+            }
 
             return rs;
         }
+
         public FunctResult<List<int>> GetKhachHang()
         {
             FunctResult<List<int>> rs = new FunctResult<List<int>>();
@@ -168,13 +172,17 @@ namespace Do_An_Quan_ly_kho.Controller
 
             return rs;
         }
-        public FunctResult<List<int>> GetNguoiDung()
+        public FunctResult<List<string>> GetNguoiDung()
         {
-            FunctResult<List<int>> rs = new FunctResult<List<int>>();
-
+            FunctResult<List<string>> rs = new FunctResult<List<string>>();
+            int userId = LoginController.userId;
             try
             {
-                var maNguoiDung = db.NguoiDungs.Select(nd => nd.MaNguoiDung).ToList();
+                var maNguoiDung = db.NguoiDungs
+                    .Where(nd => nd.MaNguoiDung == userId) 
+                    .Select(nd => nd.HoTen)                       
+                    .ToList();                            
+
 
                 if (maNguoiDung.Any())
                 {
@@ -186,7 +194,7 @@ namespace Do_An_Quan_ly_kho.Controller
                 {
                     rs.Data = null;
                     rs.ErrCode = EnumErrCode.Empty;
-                    rs.ErrDesc = "Không tìm thấy dữ liệu.";
+                    rs.ErrDesc = "Bạn chưa đăng nhập";
                 }
             }
             catch (Exception ex)
@@ -200,52 +208,77 @@ namespace Do_An_Quan_ly_kho.Controller
             return rs;
         }
 
+        public PhieuBanHang getNewest()
+        {
+            var maxPhieuBan = this.db.PhieuBanHangs
+            .OrderByDescending(e => e.MaPhieuBan)
+            .FirstOrDefault();
 
-        public FunctResult<List<PhieuBanHang>> CreatePhieuBan(string maKh, string maNd, string date)
+            return maxPhieuBan;
+
+        }
+
+
+        public FunctResult<List<PhieuBanHang>> CreatePhieuBan(string tenKh, string maNd, string date, string sdt, string address)
         {
             FunctResult<List<PhieuBanHang>> rs = new FunctResult<List<PhieuBanHang>>();
             decimal tongtien = 0;
+
             try
             {
-                if (string.IsNullOrEmpty(maKh) ||
+                if (string.IsNullOrEmpty(tenKh) ||
                     string.IsNullOrEmpty(maNd) ||
-                    string.IsNullOrEmpty(date) )
+                    string.IsNullOrEmpty(date) ||
+                    string.IsNullOrEmpty(sdt) ||
+                    string.IsNullOrEmpty(address))
                 {
                     rs.ErrCode = EnumErrCode.InvalidInput;
                     rs.ErrDesc = "Vui lòng nhập đầy đủ các trường dữ liệu";
                     rs.Data = null;
                     return rs;
                 }
-                else
+
+                var newCustomer = new KhachHang
                 {
-                    var obj = new PhieuBanHang
-                    {
-                        MaPhieuBan = 0,
-                        MaKhachHang = int.Parse(maKh),
-                        MaNguoiDung = int.Parse(maNd),
-                        NgayBan = DateTime.Parse(date),
-                        TongTien = tongtien
-                    };
+                    TenKhachHang = tenKh,
+                    SoDienThoai = sdt,
+                    DiaChi = address
+                };
 
-                    rs.Data = new List<PhieuBanHang> { obj };
-                    db.PhieuBanHangs.InsertOnSubmit(obj);
-                    db.SubmitChanges();
+                db.KhachHangs.InsertOnSubmit(newCustomer);
 
-                    rs.ErrCode = EnumErrCode.Success;
-                    rs.ErrDesc = "Thêm phiếu bán thành công thành công.";
-                }
+                db.SubmitChanges();
+
+                int generatedCustomerId = newCustomer.MaKhachHang;
+
+
+                var newInvoice = new PhieuBanHang
+                {
+                    MaNguoiDung = int.Parse(maNd),
+                    MaKhachHang = generatedCustomerId,
+                    NgayBan = DateTime.Parse(date),
+                    TongTien = tongtien
+                };
+
+                db.PhieuBanHangs.InsertOnSubmit(newInvoice);
+                db.SubmitChanges();
+
+                // Trả về kết quả thành công
+                rs.Data = new List<PhieuBanHang> { newInvoice };
+                rs.ErrCode = EnumErrCode.Success;
+                rs.ErrDesc = "Thêm phiếu bán thành công. Vui lòng chọn sản phẩm";
             }
             catch (Exception ex)
             {
                 // Xử lý ngoại lệ
                 rs.ErrCode = EnumErrCode.Error;
-                rs.ErrDesc = "Có lỗi xảy ra trong quá trình thêm mới tài khoản. Chi tiết lỗi: " + ex.Message;
+                rs.ErrDesc = "Có lỗi xảy ra trong quá trình thêm mới phiếu bán. Chi tiết lỗi: " + ex.Message;
                 rs.Data = null;
             }
 
-
             return rs;
         }
+
 
 
         public FunctResult<decimal?> GetGiaSp(int id)
