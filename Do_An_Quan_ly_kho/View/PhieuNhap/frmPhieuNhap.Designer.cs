@@ -42,6 +42,7 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnRefesh = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReceiptInSite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReceiptInfor)).BeginInit();
@@ -94,6 +95,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.Controls.Add(this.btnRefesh);
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.btnEdit);
             this.panel2.Controls.Add(this.btnAdd);
@@ -201,6 +203,21 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Thông tin phiếu:";
             // 
+            // btnRefesh
+            // 
+            this.btnRefesh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefesh.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefesh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefesh.Image")));
+            this.btnRefesh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefesh.Location = new System.Drawing.Point(414, 27);
+            this.btnRefesh.Name = "btnRefesh";
+            this.btnRefesh.Size = new System.Drawing.Size(159, 49);
+            this.btnRefesh.TabIndex = 31;
+            this.btnRefesh.Text = " Làm mới";
+            this.btnRefesh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefesh.UseVisualStyleBackColor = true;
+            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
+            // 
             // frmPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -237,5 +254,6 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnRefesh;
     }
 }

@@ -70,7 +70,7 @@ namespace Do_An_Quan_ly_kho
             string diachi = txtAddress.Text;
             string ghichu = txtNote.Text;
 
-            var rs = nv.Create(MaNV, TenNV, tk, mk, sdt, diachi, ghichu);
+            var rs = nv.Create( TenNV, tk, mk, sdt, diachi, ghichu);
 
             switch (rs.ErrCode)
             {

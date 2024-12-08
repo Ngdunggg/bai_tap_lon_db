@@ -49,15 +49,15 @@ namespace Do_An_Quan_ly_kho
                 MessageBox.Show(result.ErrDesc, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void LoadSanPham()
+        private void LoadLoaiSanPham()
         {
-            var result = pn.GetAllSanPham(); 
+            var result = pn.GetAllLoaiSanPham(); 
 
             if (result.ErrCode == EnumErrCode.Success)
             {
                 cbSanpham.DataSource = result.Data;
-                cbSanpham.DisplayMember = "MaDanhMuc"; 
-                cbSanpham.ValueMember = "MaSanPham"; 
+                cbSanpham.DisplayMember = "TenDanhMuc"; 
+                cbSanpham.ValueMember = "MaDanhMuc"; 
             }
             else
             {
@@ -79,7 +79,7 @@ namespace Do_An_Quan_ly_kho
         {
             LoadData();
             LoadNhanVien();
-            LoadSanPham();
+            LoadLoaiSanPham();
            
             txt_Tongtien.ReadOnly = true;
             txt_Tongtien.Enabled = false;

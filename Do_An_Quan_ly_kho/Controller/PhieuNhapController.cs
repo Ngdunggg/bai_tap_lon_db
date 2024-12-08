@@ -117,7 +117,7 @@ namespace Do_An_Quan_ly_kho.Controller
                                          LoaiHangHoa = sanPham.MaDanhMuc,
                                          GiaHangHoa = sanPham.Gia,
                                          SoLuong = chiTiet.SoLuong,
-                                         TongSoTien = chiTiet.GiaNhap
+                                         TongSoTien = (decimal)phieu.TongTien
                                      };
 
                 var resultList = phieuNhapQuery.ToList();
@@ -174,6 +174,7 @@ namespace Do_An_Quan_ly_kho.Controller
                     {
                         TenSanPham = tenHangHoa,
                         MaDanhMuc = loaiHangHoa,
+                        SoLuongTonKho = soLuong,    
                         Gia = giaHangHoa
                     };
                     db.SanPhams.InsertOnSubmit(sanPham);
@@ -237,13 +238,13 @@ namespace Do_An_Quan_ly_kho.Controller
         }
 
 
-        public FunctResult<List<SanPham>> GetAllSanPham()
+        public FunctResult<List<DanhMucSanPham>> GetAllLoaiSanPham()
         {
-            FunctResult<List<SanPham>> result = new FunctResult<List<SanPham>>();
+            FunctResult<List<DanhMucSanPham>> result = new FunctResult<List<DanhMucSanPham>>();
 
             try
             {
-                var data = db.SanPhams.ToList();
+                var data = db.DanhMucSanPhams.ToList();
                 result.Data = data;
                 result.ErrCode = EnumErrCode.Success;
             }

@@ -98,7 +98,6 @@
             this.dgvUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUser.Size = new System.Drawing.Size(661, 499);
             this.dgvUser.TabIndex = 5;
-            
             this.dgvUser.SelectionChanged += new System.EventHandler(this.dgvUser_SelectionChanged);
             this.dgvUser.Click += new System.EventHandler(this.dgvUser_Click);
             // 
@@ -227,6 +226,7 @@
             this.txtUserId.Location = new System.Drawing.Point(152, 239);
             this.txtUserId.Multiline = true;
             this.txtUserId.Name = "txtUserId";
+            this.txtUserId.ReadOnly = true;
             this.txtUserId.Size = new System.Drawing.Size(272, 32);
             this.txtUserId.TabIndex = 1;
             this.txtUserId.TextChanged += new System.EventHandler(this.txtUserId_TextChanged);

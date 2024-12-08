@@ -83,7 +83,7 @@ namespace Do_An_Quan_ly_kho
         {
             Login login = new Login();
             login.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

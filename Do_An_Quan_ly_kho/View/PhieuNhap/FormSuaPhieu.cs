@@ -53,13 +53,13 @@ namespace Do_An_Quan_ly_kho.View.PhieuNhap
         }
         private void LoadSanPham()
         {
-            var result = pn.GetAllSanPham();
+            var result = pn.GetAllLoaiSanPham();
 
             if (result.ErrCode == EnumErrCode.Success)
             {
                 cbSanpham.DataSource = result.Data;
-                cbSanpham.DisplayMember = "MaDanhMuc";
-                cbSanpham.ValueMember = "MaSanPham";
+                cbSanpham.DisplayMember = "TenDanhMuc";
+                cbSanpham.ValueMember = "MaDanhMuc";
             }
             else
             {
@@ -68,13 +68,13 @@ namespace Do_An_Quan_ly_kho.View.PhieuNhap
         }
         private void LoadNhaCungCap()
         {
-            var result = pn.GetAllSanPham();
+            var result = pn.GetAllNhaCungCap();
 
             if (result.ErrCode == EnumErrCode.Success)
             {
                 cbSanpham.DataSource = result.Data;
-                cbSanpham.DisplayMember = "MaDanhMuc";
-                cbSanpham.ValueMember = "MaSanPham";
+                cbSanpham.DisplayMember = "TenNhaCungCap";
+                cbSanpham.ValueMember = "MaNhaCungCap";
             }
             else
             {

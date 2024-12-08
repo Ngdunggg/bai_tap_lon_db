@@ -161,5 +161,14 @@ namespace Do_An_Quan_ly_kho.View.PhieuNhap
             dgvReceiptInfor.ClearSelection();
 
         }
+
+        private void btnRefesh_Click(object sender, EventArgs e)
+        {
+            FormPhieuNhap(sender, e);
+
+            btnEdit.Enabled = true;
+
+            dgvReceiptInSite.DataSource = null;
+        }
     }
 }
