@@ -22,7 +22,7 @@ namespace Do_An_Quan_ly_kho.Model
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Do_an_quan_ly_kho")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ahihihi")]
 	public partial class DatabaseDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -60,7 +60,7 @@ namespace Do_An_Quan_ly_kho.Model
     #endregion
 		
 		public DatabaseDataContext() : 
-				base(global::Do_An_Quan_ly_kho.Properties.Settings.Default.Do_an_quan_ly_khoConnectionString, mappingSource)
+				base(global::Do_An_Quan_ly_kho.Properties.Settings.Default.ahihihiConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

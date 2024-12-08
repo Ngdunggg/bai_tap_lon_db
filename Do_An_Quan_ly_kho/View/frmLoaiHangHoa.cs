@@ -14,7 +14,7 @@ namespace Do_An_Quan_ly_kho
 {
     public partial class frmLoaiHangHoa : Form
     {
-        public databaseDataContext db = new databaseDataContext();
+        DatabaseDataContext db = new DatabaseDataContext();
         public frmLoaiHangHoa()
         {
             InitializeComponent();

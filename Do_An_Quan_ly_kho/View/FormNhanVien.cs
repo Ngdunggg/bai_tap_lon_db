@@ -15,7 +15,7 @@ namespace Do_An_Quan_ly_kho
 {
     public partial class FormNhanVien : Form
     {
-        private databaseDataContext db = new databaseDataContext();
+        DatabaseDataContext db = new DatabaseDataContext();
         public FormNhanVien()
         {
             InitializeComponent();
