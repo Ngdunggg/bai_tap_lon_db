@@ -5,18 +5,18 @@
     <Setting Name="Quan_Ly_Tap_HoaConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionString&gt;Data Source=HOANGDUONG;Initial Catalog=Quan_Ly_Tap_Hoa;Integrated Security=True;TrustServerCertificate=True&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=NguyenDung\\SQLEXPRESS;Database=ahihi;User Id=sa;Password=Vandung2004;Trusted_Connection=True;TrustServerCertificate=True&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=HOANGDUONG;Initial Catalog=Quan_Ly_Tap_Hoa;Integrated Security=True;TrustServerCertificate=True</Value>
+      <Value Profile="(Default)">Data Source=NguyenDung\\SQLEXPRESS;Database=ahihi;User Id=sa;Password=Vandung2004;Trusted_Connection=True;TrustServerCertificate=True</Value>
     </Setting>
     <Setting Name="Quan_Ly_Nha_KhoConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionString&gt;Data Source=HOANGDUONG;Initial Catalog=Quan_Ly_Nha_Kho;Integrated Security=True;TrustServerCertificate=True&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=NguyenDung\\SQLEXPRESS;Database=ahihi;User Id=sa;Password=Vandung2004;Trusted_Connection=True;TrustServerCertificate=True&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=HOANGDUONG;Initial Catalog=Quan_Ly_Nha_Kho;Integrated Security=True;TrustServerCertificate=True</Value>
+      <Value Profile="(Default)">Data Source=NguyenDung\\SQLEXPRESS;Database=ahihi;User Id=sa;Password=Vandung2004;Trusted_Connection=True;TrustServerCertificate=True</Value>
     </Setting>
     <Setting Name="ahihiConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;

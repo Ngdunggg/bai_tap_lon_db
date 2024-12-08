@@ -26,8 +26,8 @@ namespace Do_An_Quan_ly_kho.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HOANGDUONG;Initial Catalog=Quan_Ly_Tap_Hoa;Integrated Security=True;T" +
-            "rustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NguyenDung\\\\SQLEXPRESS;Database=ahihi;User Id=sa;Password=Vandung2004" +
+            ";Trusted_Connection=True;TrustServerCertificate=True")]
         public string Quan_Ly_Tap_HoaConnectionString {
             get {
                 return ((string)(this["Quan_Ly_Tap_HoaConnectionString"]));
@@ -37,8 +37,8 @@ namespace Do_An_Quan_ly_kho.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HOANGDUONG;Initial Catalog=Quan_Ly_Nha_Kho;Integrated Security=True;T" +
-            "rustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NguyenDung\\\\SQLEXPRESS;Database=ahihi;User Id=sa;Password=Vandung2004" +
+            ";Trusted_Connection=True;TrustServerCertificate=True")]
         public string Quan_Ly_Nha_KhoConnectionString {
             get {
                 return ((string)(this["Quan_Ly_Nha_KhoConnectionString"]));

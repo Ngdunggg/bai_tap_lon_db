@@ -70,6 +70,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(443, 35);
             this.txtSearch.TabIndex = 1;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // checkBoxId
             // 
@@ -228,6 +229,7 @@
             this.txtUserId.Name = "txtUserId";
             this.txtUserId.Size = new System.Drawing.Size(272, 32);
             this.txtUserId.TabIndex = 1;
+            this.txtUserId.TextChanged += new System.EventHandler(this.txtUserId_TextChanged);
             // 
             // label2
             // 
