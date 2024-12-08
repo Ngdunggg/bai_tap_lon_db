@@ -165,6 +165,7 @@
     <Compile Include="Controller\KhachHangController.cs" />
     <Compile Include="Controller\NhanVienController.cs" />
     <Compile Include="Controller\HangHoaController.cs" />
+    <Compile Include="Controller\NhaCungCapController.cs" />
     <Compile Include="Model\Database.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
