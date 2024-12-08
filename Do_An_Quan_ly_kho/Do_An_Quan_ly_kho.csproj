@@ -145,6 +145,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -160,15 +161,25 @@
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\HangHoaController.cs" />
     <Compile Include="Controller\LoaiHangHoaController.cs" />
+    <Compile Include="Controller\DashboardController.cs" />
+    <Compile Include="Controller\KhachHangController.cs" />
     <Compile Include="Controller\NhanVienController.cs" />
+    <Compile Include="Controller\HangHoaController.cs" />
+    <Compile Include="Controller\NhaCungCapController.cs" />
+    <Compile Include="Controller\PhieuNhapController.cs" />
+    <Compile Include="Controller\PhieuBanController.cs" />
     <Compile Include="Model\Database.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Database.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Dbcontext.cs" />
+    <Compile Include="Model\DTOs\countProductIn.cs" />
+    <Compile Include="Model\DTOs\Customer.cs" />
+    <Compile Include="Model\DTOs\MoneyCountByMonth.cs" />
+    <Compile Include="Model\DTOs\SupplierCountByMonth.cs" />
     <Compile Include="Model\EnumErrCode.cs" />
     <Compile Include="Model\FunctResult.cs" />
+    <Compile Include="Model\ViewModel\PhieuNhapHangViewModel.cs" />
     <Compile Include="View\FormHangHoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,8 +272,12 @@
     <Compile Include="View\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <None Include="Model\Database.dbml.layout">
+      <DependentUpon>Database.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="View\FormHangHoa.resx">
       <DependentUpon>FormHangHoa.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormKhachHang.resx">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
@@ -319,9 +334,6 @@
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Database.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Model\Database.dbml.layout">
-      <DependentUpon>Database.dbml</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

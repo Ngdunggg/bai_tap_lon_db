@@ -14,8 +14,10 @@ namespace Do_An_Quan_ly_kho.Controller
 {
     internal class LoginController
     {
+        public static int userId;
+        public static string role = "";
          DatabaseDataContext db = new DatabaseDataContext();
-        public void XulyLogin(string username , string password , Form loginn) {
+        public void XulyLogin(string username , string password , bool Checksavemk , Form loginn) {
 
             var user = db.NguoiDungs.FirstOrDefault(x => x.TenDangNhap == username);
             
@@ -31,12 +33,32 @@ namespace Do_An_Quan_ly_kho.Controller
                 else
                 {
                     var matkhau = db.NguoiDungs
-                 .Where(x => x.TenDangNhap == username)
-                 .Select(x => x.MatKhau)
-                 .FirstOrDefault();
-                    if (matkhau == password)
+               .Where(x => x.TenDangNhap == username)
+               .Select(x => new { x.MatKhau, x.MaNguoiDung, x.MoTa })
+               .FirstOrDefault();
+                    if (matkhau.MatKhau == password)
                     {
                         MessageBox.Show("Đăng nhập thành công", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        userId = matkhau.MaNguoiDung;
+                        role = matkhau.MoTa;
+                        if (Checksavemk == true)
+                        {
+                            Do_An_Quan_ly_kho.Properties.Settings.Default.username = username;
+                            Do_An_Quan_ly_kho.Properties.Settings.Default.password = password;
+                            Do_An_Quan_ly_kho.Properties.Settings.Default.checkluumk = true;
+
+                            Properties.Settings.Default.Save();
+                        }
+                        else
+                        {
+                            Do_An_Quan_ly_kho.Properties.Settings.Default.username = "";
+                            Do_An_Quan_ly_kho.Properties.Settings.Default.password = "";
+                            Do_An_Quan_ly_kho.Properties.Settings.Default.checkluumk = false;
+                            Properties.Settings.Default.Save();
+                        }
+
+
+
                         frmMain dashboard = new frmMain();
                         dashboard.Show();
                         loginn.Hide();

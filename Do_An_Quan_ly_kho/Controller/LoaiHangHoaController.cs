@@ -43,7 +43,7 @@ namespace Do_An_Quan_ly_kho.Controller
             FunctResult<DanhMucSanPham> rs = new FunctResult<DanhMucSanPham>();
             try
             {
-                if (string.IsNullOrEmpty(TenLoaiHang))
+                if(string.IsNullOrEmpty(TenLoaiHang))
                 {
                     rs.ErrCode = EnumErrCode.InvalidInput;
                     rs.ErrDesc = "Vui lòng nhập đầy đủ các trường dữ liệu";

@@ -14,7 +14,7 @@ namespace Do_An_Quan_ly_kho
 {
     public partial class frmLoaiHangHoa : Form
     {
-        public DatabaseDataContext db = new DatabaseDataContext();
+        DatabaseDataContext db = new DatabaseDataContext();
         public frmLoaiHangHoa()
         {
             InitializeComponent();
@@ -130,8 +130,8 @@ namespace Do_An_Quan_ly_kho
             }
 
             var selectedRow = dgvType.SelectedRows[0];
-            int id = (int)selectedRow.Cells["MaDanhMuc"].Value;
-            var rs = danhmuc.Update(id, TenHangHoa);
+            int id = (int)selectedRow.Cells["MaDanhMuc"].Value; 
+            var rs = danhmuc.Update(id, TenHangHoa); 
             switch (rs.ErrCode)
             {
                 case EnumErrCode.Error:
@@ -144,7 +144,7 @@ namespace Do_An_Quan_ly_kho
 
                 case EnumErrCode.Success:
                     MessageBox.Show(rs.ErrDesc, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    frmLoaiHangHoa_Load(sender, e);
+                    frmLoaiHangHoa_Load(sender, e); 
                     clearInput();
                     break;
             }
@@ -181,7 +181,7 @@ namespace Do_An_Quan_ly_kho
 
                     case EnumErrCode.Success:
                         MessageBox.Show(rs.ErrDesc, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        frmLoaiHangHoa_Load(sender, e);
+                        frmLoaiHangHoa_Load(sender, e); 
                         clearInput();
                         break;
                 }
@@ -190,7 +190,6 @@ namespace Do_An_Quan_ly_kho
 
         private void btnRefesh_Click(object sender, EventArgs e)
         {
-            frmLoaiHangHoa_Load(sender, e);
             clearInput();
         }
 
@@ -231,7 +230,7 @@ namespace Do_An_Quan_ly_kho
 
         private void checkBoxName_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxName.Checked)
+            if(checkBoxName.Checked)
             {
                 checkBoxId.Checked = false;
             }
@@ -243,6 +242,16 @@ namespace Do_An_Quan_ly_kho
             {
                 checkBoxName.Checked = false;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            frmMain frm = new frmMain();
+            frm.ShowDialog();
+
+            this.Close();
         }
     }
 }

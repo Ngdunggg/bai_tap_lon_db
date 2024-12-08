@@ -15,7 +15,7 @@ namespace Do_An_Quan_ly_kho
 {
     public partial class FormNhanVien : Form
     {
-        private DatabaseDataContext db = new DatabaseDataContext();
+        DatabaseDataContext db = new DatabaseDataContext();
         public FormNhanVien()
         {
             InitializeComponent();
@@ -70,7 +70,7 @@ namespace Do_An_Quan_ly_kho
             string diachi = txtAddress.Text;
             string ghichu = txtNote.Text;
 
-            var rs = nv.Create(MaNV, TenNV, tk, mk, sdt, diachi, ghichu);
+            var rs = nv.Create( TenNV, tk, mk, sdt, diachi, ghichu);
 
             switch (rs.ErrCode)
             {
@@ -93,10 +93,7 @@ namespace Do_An_Quan_ly_kho
             clearInput();
         }
 
-        private void dgvUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
+        
 
         private void dgvUser_Click(object sender, EventArgs e)
         {
@@ -248,6 +245,26 @@ namespace Do_An_Quan_ly_kho
                 btnEdit.Enabled = true;
                 btnDelete.Enabled = true;
             }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUserId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            frmMain frm = new frmMain();
+            frm.ShowDialog();
+
+            this.Close();
         }
     }
 }

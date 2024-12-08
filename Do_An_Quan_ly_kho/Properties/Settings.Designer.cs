@@ -26,6 +26,39 @@ namespace Do_An_Quan_ly_kho.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-8HGUTVP;Initial Catalog=ahihi;Integrated Security=True;TrustS" +
+            "erverCertificate=True")]
+        public string QLTHConnectionString {
+            get {
+                return ((string)(this["QLTHConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\\SQLEXPRESS;Initial Catalog=ahihihi;Integrated Security=True" +
+            ";TrustServerCertificate=True")]
+        public string ahihihiConnectionString {
+            get {
+                return ((string)(this["ahihihiConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-TNO9IKC\\SQLEXPRESS;Initial Catalog=ahihi;Integrated Security=" +
+            "True;Encrypt=True;TrustServerCertificate=True")]
+        public string ahihiConnectionString1 {
+            get {
+                return ((string)(this["ahihiConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HOANGDUONG;Initial Catalog=Quan_Ly_Tap_Hoa;Integrated Security=True;T" +
             "rustServerCertificate=True")]
         public string Quan_Ly_Tap_HoaConnectionString {
@@ -53,6 +86,64 @@ namespace Do_An_Quan_ly_kho.Properties {
         public string ahihiConnectionString {
             get {
                 return ((string)(this["ahihiConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DUNG\\XUANDUNG;Initial Catalog=ahihi;Integrated Security=True;Encrypt=" +
+            "True;TrustServerCertificate=True")]
+        public string ahihiConnectionString2 {
+            get {
+                return ((string)(this["ahihiConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-2R0P7QB;Initial Catalog=ahihi;Integrated Security=True;Encryp" +
+            "t=True;TrustServerCertificate=True")]
+        public string ahihihiConnectionString1 {
+            get {
+                return ((string)(this["ahihihiConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string username {
+            get {
+                return ((string)(this["username"]));
+            }
+            set {
+                this["username"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string password {
+            get {
+                return ((string)(this["password"]));
+            }
+            set {
+                this["password"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool checkluumk {
+            get {
+                return ((bool)(this["checkluumk"]));
+            }
+            set {
+                this["checkluumk"] = value;
             }
         }
     }

@@ -37,12 +37,12 @@ namespace Do_An_Quan_ly_kho.Controller
             }
             return rs;
         }
-        public FunctResult<NguoiDung> Create(string MaNV, string TenNV, string tk, string mk, string sdt, string diachi, string ghichu)
+        public FunctResult<NguoiDung> Create( string TenNV, string tk, string mk, string sdt, string diachi, string ghichu)
         {
             FunctResult<NguoiDung> rs = new FunctResult<NguoiDung>();
             try
             {
-                if (string.IsNullOrEmpty(MaNV) ||
+                if (
                     string.IsNullOrEmpty(TenNV) ||
                     string.IsNullOrEmpty(tk) ||
                     string.IsNullOrEmpty(mk))
@@ -52,8 +52,7 @@ namespace Do_An_Quan_ly_kho.Controller
                     rs.Data = null;
                     return rs;
                 }
-                if (db.NguoiDungs.FirstOrDefault(x => x.TenDangNhap == tk ||
-                                                x.MaNguoiDung == int.Parse(MaNV)) != null)
+                if (db.NguoiDungs.FirstOrDefault(x => x.TenDangNhap == tk ) != null)
                 {
                     rs.ErrCode = EnumErrCode.Empty;
                     rs.ErrDesc = "Thông tin tài khoản đã tồn tại vui lòng nhập lại ";
@@ -64,7 +63,6 @@ namespace Do_An_Quan_ly_kho.Controller
                 {
                     var obj = new NguoiDung
                     {
-                        MaNguoiDung = int.Parse(MaNV),
                         TenDangNhap = tk,
                         MatKhau = mk,
                         HoTen = TenNV,

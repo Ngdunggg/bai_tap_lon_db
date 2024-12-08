@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Do_An_Quan_ly_kho.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,37 @@ namespace Do_An_Quan_ly_kho.View.PhieuNhap
         public frmPhieuNhap()
         {
             InitializeComponent();
+            dgvReceiptInfor.CellClick += dgvReceiptInfor_CellContentClick;
+            this.Load += FormPhieuNhap;
         }
+        PhieuNhapController pn = new PhieuNhapController();
+        public void FormPhieuNhap(object sender, EventArgs e)
+        {
+            var rs = pn.GetAll();
+            switch (rs.ErrCode)
+            {
+                case Model.EnumErrCode.Error:
+                    MessageBox.Show(rs.ErrDesc, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                case Model.EnumErrCode.Empty:
+                    MessageBox.Show(rs.ErrDesc, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case Model.EnumErrCode.Success:
+                    dgvReceiptInfor.DataSource = rs.Data;
+                    break;
+            }
+
+            dgvReceiptInfor.ClearSelection();
+
+            //dgvReceiptInfor.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgvReceiptInfor.AutoGenerateColumns = true;
+            dgvReceiptInfor.DataSource = rs.Data;
+
+            dgvReceiptInfor.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvReceiptInfor.RowTemplate.Height = 30;
+            dgvReceiptInfor.ReadOnly = true;
+        }
+
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
@@ -45,14 +76,113 @@ namespace Do_An_Quan_ly_kho.View.PhieuNhap
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormThemHangNhap frm = new FormThemHangNhap();
             frm.ShowDialog();
+            this.Close();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormSuaPhieu frm = new FormSuaPhieu();
             frm.ShowDialog();
+            this.Close();
+        }
+
+        private void dgvReceiptInfor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) 
+            {
+                int phieuNhapID = (int)dgvReceiptInfor.Rows[e.RowIndex].Cells["MaPhieuNhap"].Value; 
+                LoadChiTietPhieuNhap(phieuNhapID);
+            }
+
+
+        }
+        private void LoadChiTietPhieuNhap(int phieuNhapID)
+        {
+            var rs = pn.GetChiTietByPhieuNhapID(phieuNhapID);
+            switch (rs.ErrCode)
+            {
+                case Model.EnumErrCode.Error:
+                    MessageBox.Show(rs.ErrDesc, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                case Model.EnumErrCode.Empty:
+                    dgvReceiptInSite.DataSource = null; 
+                    break;
+                case Model.EnumErrCode.Success:
+                    dgvReceiptInSite.DataSource = rs.Data;
+                    break;
+            }
+
+            dgvReceiptInSite.ClearSelection();
+
+            btnEdit.Enabled = false;
+
+            //dgvReceiptInfor.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgvReceiptInSite.AutoGenerateColumns = true;
+            dgvReceiptInSite.DataSource = rs.Data;
+
+            dgvReceiptInSite.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvReceiptInSite.RowTemplate.Height = 30;
+            dgvReceiptInSite.ReadOnly = true;
+        }
+
+
+        private void dgvReceiptInSite_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            DateTime fromDate = dateTimePicker2.Value.Date; 
+            DateTime toDate = dateTimePicker1.Value.Date;   
+
+            if (fromDate > toDate) 
+            {
+                MessageBox.Show("Ngày bắt đầu không thể lớn hơn ngày kết thúc.", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var rs = pn.SearchByDateRange(fromDate, toDate); 
+            switch (rs.ErrCode)
+            {
+                case Model.EnumErrCode.Error:
+                    MessageBox.Show(rs.ErrDesc, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                case Model.EnumErrCode.Empty:
+                    MessageBox.Show(rs.ErrDesc, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvReceiptInfor.DataSource = null; 
+                    break;
+                case Model.EnumErrCode.Success:
+                    dgvReceiptInfor.DataSource = rs.Data; 
+                    break;
+            }
+
+            dgvReceiptInfor.ClearSelection();
+
+        }
+
+        private void btnRefesh_Click(object sender, EventArgs e)
+        {
+            FormPhieuNhap(sender, e);
+
+            btnEdit.Enabled = true;
+
+            dgvReceiptInSite.DataSource = null;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            frmMain frm = new frmMain();
+            frm.ShowDialog();
+
+            this.Close();
         }
     }
 }
