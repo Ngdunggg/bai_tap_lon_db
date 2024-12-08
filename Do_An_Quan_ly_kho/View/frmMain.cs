@@ -55,10 +55,17 @@ namespace Do_An_Quan_ly_kho
 
         private void thôngTinNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormNhanVien frm = new FormNhanVien();
-            frm.Show();
-            this.Close();
+            if(LoginController.role == "admin")
+            {
+                this.Hide();
+                FormNhanVien frm = new FormNhanVien();
+                frm.Show();
+                this.Close();
+            } else
+            {
+                MessageBox.Show("Bạn không phải admin không có quyền truy cập");
+            }
+            
         }
 
         private void phiếuNhậpToolStripMenuItem_Click(object sender, EventArgs e)
