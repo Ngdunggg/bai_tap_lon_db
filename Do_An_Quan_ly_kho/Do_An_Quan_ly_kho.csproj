@@ -157,6 +157,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\LoaiHangHoaController.cs" />
     <Compile Include="Controller\DashboardController.cs" />
     <Compile Include="Controller\NhanVienController.cs" />
     <Compile Include="Model\Database.designer.cs">
@@ -164,7 +165,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Dbcontext.cs" />
     <Compile Include="Model\DTOs\countProductIn.cs" />
     <Compile Include="Model\DTOs\Customer.cs" />
     <Compile Include="Model\DTOs\MoneyCountByMonth.cs" />
