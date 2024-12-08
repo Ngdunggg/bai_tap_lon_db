@@ -160,6 +160,7 @@
     <Compile Include="Controller\LoaiHangHoaController.cs" />
     <Compile Include="Controller\DashboardController.cs" />
     <Compile Include="Controller\NhanVienController.cs" />
+    <Compile Include="Controller\HangHoaController.cs" />
     <Compile Include="Model\Database.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
