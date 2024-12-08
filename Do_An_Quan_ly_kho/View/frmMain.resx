@@ -190,7 +190,7 @@
   <data name="thôngTinKháchHàngToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        qgAAAKoBBgpwTwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAMoSURBVEhLjZX7
+        qAAAAKgBefSzxgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAMoSURBVEhLjZX7
         SxRRFMf9N3oY/TMFUe4umimm5Pvt7ppmRlZmiqkgauoqWqsUFObbfKWmIairIq4mWv1QFEVqlI+QJJ1v
         59y9O87ujOKBDzt7z/l+z7137swEHBWYDToDlyUD0+YBYoX4I+HrAcyY0uk3UJYfPzBx6RSmTfUk3iPg
         ZXfCItCOEfuYsbRg0nJWyo8OmrEFLvO21mSsORw3M+ORmJgo4OvRpnBtE2aLVmSSNsZBs7ZR4b5W2FYd
@@ -210,7 +210,7 @@
   <data name="thôngTinLoạiHàngHóaToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        rQAAAK0BVE7WMAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAMRSURBVEhL7Zbt
+        qAAAAKgBefSzxgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAMRSURBVEhL7Zbt
         SxNxHMAHEdSb/oJing93ahqBRGiKpNaLFENrRr0oH8Kn+WzgU1unQZbp3NQ2jQwKtPBVvYlASEVNy4eb
         C1s+bPPmNh+2qZim4ta3+83d1Dk1g17VFz5wd7v7fLhtv9s4vzNm0vOYToDfNAjwZARVeIpszzvbqCsh
         UtljNIkH208/2OhIIkwv9NIyAGKw4DS8zQqB0RJf2z5CXeIz/Zp/frghOeCw/bL9p585WS/ESUZgRRId
@@ -316,4 +316,10 @@
         ANwKSwUIEbqeAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="Bieudo.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>225, 20</value>
+  </metadata>
 </root>
