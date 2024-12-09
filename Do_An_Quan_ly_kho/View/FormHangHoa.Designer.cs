@@ -36,7 +36,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.checkBoxName = new System.Windows.Forms.CheckBox();
             this.btnRefesh = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,10 +47,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.back = new System.Windows.Forms.Button();
             this.cbTypeOfCategory = new System.Windows.Forms.ComboBox();
             this.txtCategoryId = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -62,7 +61,7 @@
             // 
             this.txtSearch.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(10, 46);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(335, 29);
@@ -75,7 +74,7 @@
             this.checkBoxId.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.checkBoxId.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxId.Location = new System.Drawing.Point(183, 80);
-            this.checkBoxId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxId.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxId.Name = "checkBoxId";
             this.checkBoxId.Size = new System.Drawing.Size(142, 22);
             this.checkBoxId.TabIndex = 0;
@@ -88,7 +87,7 @@
             this.dgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCategory.Location = new System.Drawing.Point(331, 130);
-            this.dgvCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvCategory.Margin = new System.Windows.Forms.Padding(2);
             this.dgvCategory.Name = "dgvCategory";
             this.dgvCategory.RowHeadersWidth = 51;
             this.dgvCategory.RowTemplate.Height = 24;
@@ -108,9 +107,9 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(331, 0);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(495, 130);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
@@ -122,7 +121,7 @@
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearch.Location = new System.Drawing.Point(368, 49);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(106, 41);
             this.btnSearch.TabIndex = 30;
@@ -138,7 +137,7 @@
             this.checkBoxName.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.checkBoxName.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxName.Location = new System.Drawing.Point(46, 80);
-            this.checkBoxName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxName.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxName.Name = "checkBoxName";
             this.checkBoxName.Size = new System.Drawing.Size(143, 22);
             this.checkBoxName.TabIndex = 2;
@@ -153,7 +152,7 @@
             this.btnRefesh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefesh.Image")));
             this.btnRefesh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRefesh.Location = new System.Drawing.Point(114, 402);
-            this.btnRefesh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRefesh.Margin = new System.Windows.Forms.Padding(2);
             this.btnRefesh.Name = "btnRefesh";
             this.btnRefesh.Size = new System.Drawing.Size(101, 39);
             this.btnRefesh.TabIndex = 15;
@@ -162,22 +161,6 @@
             this.btnRefesh.UseVisualStyleBackColor = true;
             this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
             // 
-            // btnDelete
-            // 
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(238, 446);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(80, 39);
-            this.btnDelete.TabIndex = 14;
-            this.btnDelete.Text = "     Xóa";
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
             // btnEdit
             // 
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -185,7 +168,7 @@
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEdit.Location = new System.Drawing.Point(238, 402);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(80, 39);
             this.btnEdit.TabIndex = 13;
@@ -198,7 +181,7 @@
             // 
             this.textBox5.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.Location = new System.Drawing.Point(114, 296);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
@@ -220,7 +203,7 @@
             // 
             this.textBox4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.Location = new System.Drawing.Point(114, 265);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
@@ -242,7 +225,7 @@
             // 
             this.txtCategoryName.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCategoryName.Location = new System.Drawing.Point(114, 234);
-            this.txtCategoryName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCategoryName.Margin = new System.Windows.Forms.Padding(2);
             this.txtCategoryName.Multiline = true;
             this.txtCategoryName.Name = "txtCategoryName";
             this.txtCategoryName.Size = new System.Drawing.Size(205, 27);
@@ -285,7 +268,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(9, 23);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(317, 107);
             this.pictureBox1.TabIndex = 0;
@@ -298,7 +281,6 @@
             this.groupBox1.Controls.Add(this.txtCategoryId);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btnRefesh);
-            this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.btnEdit);
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.label6);
@@ -312,20 +294,34 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(331, 498);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin hàng hóa";
+            // 
+            // back
+            // 
+            this.back.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.back.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.back.Location = new System.Drawing.Point(114, 448);
+            this.back.Margin = new System.Windows.Forms.Padding(2);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(204, 39);
+            this.back.TabIndex = 22;
+            this.back.Text = "Trở về";
+            this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // cbTypeOfCategory
             // 
             this.cbTypeOfCategory.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTypeOfCategory.FormattingEnabled = true;
             this.cbTypeOfCategory.Location = new System.Drawing.Point(114, 201);
-            this.cbTypeOfCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbTypeOfCategory.Margin = new System.Windows.Forms.Padding(2);
             this.cbTypeOfCategory.Name = "cbTypeOfCategory";
             this.cbTypeOfCategory.Size = new System.Drawing.Size(205, 25);
             this.cbTypeOfCategory.TabIndex = 21;
@@ -334,9 +330,10 @@
             // 
             this.txtCategoryId.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCategoryId.Location = new System.Drawing.Point(114, 167);
-            this.txtCategoryId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCategoryId.Margin = new System.Windows.Forms.Padding(2);
             this.txtCategoryId.Multiline = true;
             this.txtCategoryId.Name = "txtCategoryId";
+            this.txtCategoryId.ReadOnly = true;
             this.txtCategoryId.Size = new System.Drawing.Size(205, 27);
             this.txtCategoryId.TabIndex = 20;
             // 
@@ -351,20 +348,6 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "Mã Hàng Hóa *";
             // 
-            // back
-            // 
-            this.back.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.back.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.back.Location = new System.Drawing.Point(114, 448);
-            this.back.Margin = new System.Windows.Forms.Padding(2);
-            this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(101, 39);
-            this.back.TabIndex = 22;
-            this.back.Text = "Trở về";
-            this.back.UseVisualStyleBackColor = true;
-            this.back.Click += new System.EventHandler(this.back_Click);
-            // 
             // FormHangHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -374,7 +357,7 @@
             this.Controls.Add(this.dgvCategory);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormHangHoa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormHangHoa";
@@ -396,7 +379,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox checkBoxName;
         private System.Windows.Forms.Button btnRefesh;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label6;

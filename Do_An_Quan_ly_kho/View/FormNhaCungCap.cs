@@ -30,7 +30,7 @@ namespace Do_An_Quan_ly_kho
             dgvSupplier.ClearSelection();
 
             btnEdit.Enabled = false;
-            btnDelete.Enabled = false;
+            /*btnDelete.Enabled = false;*/
 
             dgvSupplier.SelectionChanged += dgvSupplier_SelectionChanged;
 
@@ -42,12 +42,12 @@ namespace Do_An_Quan_ly_kho
             if (dgvSupplier.SelectedRows.Count == 0)
             {
                 btnEdit.Enabled = false;
-                btnDelete.Enabled = false;
+                /*btnDelete.Enabled = false;*/
             }
             else
             {
                 btnEdit.Enabled = true;
-                btnDelete.Enabled = true;
+                /*btnDelete.Enabled = true;*/
             }
             if (dgvSupplier.SelectedRows.Count > 0)
             {
@@ -104,38 +104,6 @@ namespace Do_An_Quan_ly_kho
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (dgvSupplier.CurrentRow == null)
-                {
-                    MessageBox.Show("Vui lòng chọn nhà cung cấp cần xóa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                int maNCC = int.Parse(dgvSupplier.CurrentRow.Cells["MaNhaCungCap"].Value.ToString());
-                var confirmResult = MessageBox.Show("Bạn có chắc chắn muốn xóa nhà cung cấp này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (confirmResult == DialogResult.Yes)
-                {
-                    bool result = nccController.DeleteSupplier(maNCC);
-                    if (result)
-                    {
-                        MessageBox.Show("Xóa nhà cung cấp thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadData();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không tìm thấy nhà cung cấp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi xóa nhà cung cấp: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
         
 
         private void btnRefesh_Click(object sender, EventArgs e)

@@ -32,7 +32,13 @@ namespace WinFormDemo
 
         private void Login_Load(object sender, EventArgs e)
         {
+            if (Do_An_Quan_ly_kho.Properties.Settings.Default.checkluumk == true)
+            {
+                txtUsername.Text = Do_An_Quan_ly_kho.Properties.Settings.Default.username;
+                txtPassword.Text = Do_An_Quan_ly_kho.Properties.Settings.Default.password;
+                luumk.Checked = true;
 
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -56,15 +62,26 @@ namespace WinFormDemo
         {
             string name = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
-           
-            
+
+            bool CheckLuuMk = luumk.Checked;
+
                 LoginController t = new LoginController();
-               t.XulyLogin(name, password ,this);
+               t.XulyLogin(name, password , CheckLuuMk ,this);
                
 
 
             
            
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
