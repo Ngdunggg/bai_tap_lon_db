@@ -58,35 +58,45 @@ namespace Do_An_Quan_ly_kho.Controller
 
         public List<MoneyCountByMonth> getMoneyOutByMonth(string year)
         {
-            var result = _db.PhieuBanHangs
-               .Where(p => p.NgayBan.Year == int.Parse(year)) 
-               .GroupBy(p => p.NgayBan.Month) 
-               .Select(g => new MoneyCountByMonth
-               {
-                   Month = g.Key,
-                   Money = g.Select(p => p.TongTien).Distinct().Sum() 
-               })
-               .OrderBy(r => r.Month) 
-               .ToList();
+            var allMonths = Enumerable.Range(1, 12); 
+
+            var result = allMonths
+                .GroupJoin(
+                    _db.PhieuBanHangs.Where(p => p.NgayBan.Year == int.Parse(year)),
+                    month => month, 
+                    p => p.NgayBan.Month, 
+                    (month, sales) => new MoneyCountByMonth
+                    {
+                        Month = month,
+                        Money = sales.Select(p => p.TongTien).Distinct().Sum() 
+                    })
+                .OrderBy(r => r.Month)
+                .ToList();
 
             return result;
+
 
         }
 
         public List<MoneyCountByMonth> getMoneyOutByIn(string year)
         {
-            var result = _db.PhieuNhapHangs
-               .Where(p => p.NgayNhap.Year == int.Parse(year))
-               .GroupBy(p => p.NgayNhap.Month)
-               .Select(g => new MoneyCountByMonth
-               {
-                   Month = g.Key,
-                   Money = g.Select(p => p.TongTien).Distinct().Sum()
-               })
-               .OrderBy(r => r.Month)
-               .ToList();
+            var allMonths = Enumerable.Range(1, 12); 
+
+            var result = allMonths
+                .GroupJoin(
+                    _db.PhieuNhapHangs.Where(p => p.NgayNhap.Year == int.Parse(year)),
+                    month => month, 
+                    p => p.NgayNhap.Month,
+                    (month, sales) => new MoneyCountByMonth
+                    {
+                        Month = month,
+                        Money = sales.Select(p => p.TongTien).Distinct().Sum() 
+                    })
+                .OrderBy(r => r.Month)
+                .ToList();
 
             return result;
+
 
         }
 
@@ -102,126 +112,125 @@ namespace Do_An_Quan_ly_kho.Controller
 
         public List<SupplierCountByMonth> SupplierCountByMonths(string year)
         {
-            var result = _db.PhieuNhapHangs
-                            .Where(p => p.NgayNhap.Year == int.Parse(year))
-                            .GroupBy(p => p.NgayNhap.Month)
-                            .Select(g => new SupplierCountByMonth
-                            {
-                                Month = g.Key,
-                                SupplierCount = g.Select(p => p.MaNhaCungCap).Distinct().Count()
-                            })
-                            .OrderBy(r => r.Month)
-                            .ToList();
+            var allMonths = Enumerable.Range(1, 12); 
+
+            var result = allMonths
+                .GroupJoin(
+                    _db.PhieuNhapHangs.Where(p => p.NgayNhap.Year == int.Parse(year)),
+                    month => month,
+                    p => p.NgayNhap.Month, 
+                    (month, entries) => new SupplierCountByMonth
+                    {
+                        Month = month,
+                        SupplierCount = entries.Select(p => p.MaNhaCungCap).Distinct().Count() 
+                    })
+                .OrderBy(r => r.Month)
+                .ToList();
+
             return result;
+
         }
 
         public List<Customer> CustomerCountByMonths(string year)
         {
-            var results = _db.PhieuBanHangs
-                .Where(p => p.NgayBan.Year == int.Parse(year))
-                .GroupBy(p => p.NgayBan.Month)
-                .Select(g => new Customer
-                {
-                    Month = g.Key,
-                    CustomerCount = g.Select(p => p.MaKhachHang).Distinct().Count()
-                })
+            var allMonths = Enumerable.Range(1, 12); 
+
+            var results = allMonths
+                .GroupJoin(
+                    _db.PhieuBanHangs.Where(p => p.NgayBan.Year == int.Parse(year)),
+                    month => month,
+                    p => p.NgayBan.Month,
+                    (month, sales) => new Customer
+                    {
+                        Month = month,
+                        CustomerCount = sales.Select(p => p.MaKhachHang).Distinct().Count() 
+                    })
+                .OrderBy(r => r.Month)
                 .ToList();
+
             return results;
+
         }
 
         public List<countProductIn> CountProductIns(string year)
         {
 
+            var allMonths = Enumerable.Range(1, 12); 
+
             try
             {
-                var results = _db.PhieuNhapHangs
-                    .Where(p => p.NgayNhap.Year == int.Parse(year)) 
-                    .GroupBy(p => p.NgayNhap.Month) 
-                    .Select(g => new countProductIn
-                    {
-                        Month = g.Key,
-                        ProductCount = g
-                            .GroupJoin(_db.ChiTietPhieuNhaps, pn => pn.MaPhieuNhap, ctpn => ctpn.MaPhieuNhap, (pn, ctpnGroup) => new { pn, ctpnGroup })
-                            .SelectMany(
-                                x => x.ctpnGroup.DefaultIfEmpty(), 
-                                (x, ctpn) => ctpn
-                            )
-                            .Sum(ctpn => ctpn != null ? ctpn.SoLuong : 0) 
-                    })
+                var results = allMonths
+                    .GroupJoin(
+                        _db.PhieuNhapHangs.Where(p => p.NgayNhap.Year == int.Parse(year)),
+                        month => month,
+                        p => p.NgayNhap.Month,
+                        (month, phieuNhapGroup) => new countProductIn
+                        {
+                            Month = month,
+                            ProductCount = phieuNhapGroup
+                                .SelectMany(
+                                    pn => _db.ChiTietPhieuNhaps.Where(ctpn => ctpn.MaPhieuNhap == pn.MaPhieuNhap).DefaultIfEmpty(),
+                                    (pn, ctpn) => ctpn?.SoLuong ?? 0
+                                )
+                                .Sum()
+                        })
+                    .OrderBy(r => r.Month)
                     .ToList();
 
-            return results;
-
-
+                return results;
             }
             catch (Exception ex)
             {
-                var result = new List<countProductIn>();
-
-                for (int month = 1; month <= 12; month++)
-                {
-
-                    result.Add(new countProductIn
+                return allMonths
+                    .Select(month => new countProductIn
                     {
                         Month = month,
                         ProductCount = 0
-                    });
-                }
-                return result;
+                    })
+                    .ToList();
             }
+
 
         }
 
         public List<countProductIn> CountProductOuts(string year)
         {
 
+            var allMonths = Enumerable.Range(1, 12); 
+
             try
             {
-                var results = _db.PhieuBanHangs
-                    .Where(p => p.NgayBan.Year == int.Parse(year))
-                    .GroupBy(p => p.NgayBan.Month)
-                    .Select(g => new countProductIn
-                    {
-                        Month = g.Key,
-                        ProductCount = g
-                            .GroupJoin(_db.ChiTietPhieuBans, pn => pn.MaPhieuBan, ctpn => ctpn.MaPhieuBan, (pn, ctpnGroup) => new { pn, ctpnGroup })
-                            .SelectMany(
-                                x => x.ctpnGroup.DefaultIfEmpty(),
-                                (x, ctpn) => ctpn
-                            )
-                            .Sum(ctpn => ctpn != null ? ctpn.SoLuong : 0)
-                    })
+                var results = allMonths
+                    .GroupJoin(
+                        _db.PhieuBanHangs.Where(p => p.NgayBan.Year == int.Parse(year)),
+                        month => month,
+                        p => p.NgayBan.Month,
+                        (month, phieuBanGroup) => new countProductIn
+                        {
+                            Month = month,
+                            ProductCount = phieuBanGroup
+                                .SelectMany(
+                                    pn => _db.ChiTietPhieuBans.Where(ctpn => ctpn.MaPhieuBan == pn.MaPhieuBan).DefaultIfEmpty(),
+                                    (pn, ctpn) => ctpn?.SoLuong ?? 0
+                                )
+                                .Sum()
+                        })
+                    .OrderBy(r => r.Month)
                     .ToList();
-                return results ;
+
+                return results;
             }
             catch (Exception ex)
             {
-                var result = new List<countProductIn>();
-
-                for (int month = 1; month <= 12; month++)
-                {
-
-                    result.Add(new countProductIn
+                return allMonths
+                    .Select(month => new countProductIn
                     {
                         Month = month,
                         ProductCount = 0
-                    });
-                }
-                return result;
+                    })
+                    .ToList();
             }
 
-            var result1 = new List<countProductIn>();
-
-            for (int month = 1; month <= 12; month++)
-            {
-
-                result1.Add(new countProductIn
-                {
-                    Month = month,
-                    ProductCount = 0
-                });
-            }
-            return result1;
 
         }
     }

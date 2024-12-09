@@ -52,7 +52,7 @@ namespace Do_An_Quan_ly_kho
             dgvUser.ClearSelection();
 
             btnEdit.Enabled = false;
-            btnDelete.Enabled = false;
+            /*btnDelete.Enabled = false;*/
 
             dgvUser.SelectionChanged += dgvUser_SelectionChanged;
 
@@ -143,41 +143,7 @@ namespace Do_An_Quan_ly_kho
             clearInput();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show(
-               "Bạn có chắc chắn muốn xóa người dùng này?",
-               "Xác nhận xóa",
-               MessageBoxButtons.YesNo,
-               MessageBoxIcon.Question);
-
-            if (result == DialogResult.No) return;
-
-            string MaNV = txtUserId.Text;
-
-            var rs = nv.Delete(MaNV);
-
-            switch (rs.ErrCode)
-            {
-                case Model.EnumErrCode.Error:
-                    MessageBox.Show(rs.ErrDesc, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
-                case Model.EnumErrCode.Empty:
-                    MessageBox.Show(rs.ErrDesc, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
-                case Model.EnumErrCode.Success:
-                    MessageBox.Show(rs.ErrDesc, "Thông báo thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    FormNhanVien_Load(rs, e);
-                    break;
-                case Model.EnumErrCode.InvalidInput:
-                    MessageBox.Show(rs.ErrDesc, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
-                default:
-                    break;
-            }
-            clearInput();
-        }
-
+     
         private void btnRefesh_Click(object sender, EventArgs e)
         {
             FormNhanVien_Load(sender, e);
@@ -238,12 +204,12 @@ namespace Do_An_Quan_ly_kho
         {
             if (dgvUser.SelectedRows.Count == 0) {
                 btnEdit.Enabled = false;
-                btnDelete.Enabled = false;
+                /*btnDelete.Enabled = false;*/
             }
             else
             {
                 btnEdit.Enabled = true;
-                btnDelete.Enabled = true;
+                /*btnDelete.Enabled = true;*/
             }
         }
 

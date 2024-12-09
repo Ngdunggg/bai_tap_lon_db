@@ -157,6 +157,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\DoiMkController.cs" />
     <Compile Include="Controller\RegisterController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\HangHoaController.cs" />
@@ -180,6 +181,12 @@
     <Compile Include="Model\EnumErrCode.cs" />
     <Compile Include="Model\FunctResult.cs" />
     <Compile Include="Model\ViewModel\PhieuNhapHangViewModel.cs" />
+    <Compile Include="View\DoiMk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DoiMk.Designer.cs">
+      <DependentUpon>DoiMk.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormHangHoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +282,9 @@
     <None Include="Model\Database.dbml.layout">
       <DependentUpon>Database.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="View\DoiMk.resx">
+      <DependentUpon>DoiMk.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FormHangHoa.resx">
       <DependentUpon>FormHangHoa.cs</DependentUpon>
       <SubType>Designer</SubType>

@@ -30,12 +30,12 @@ namespace Do_An_Quan_ly_kho
             if (dgvType.SelectedRows.Count == 0)
             {
                 btnEdit.Enabled = false;
-                btnDelete.Enabled = false;
+                /*btnDelete.Enabled = false;*/
             }
             else
             {
                 btnEdit.Enabled = true;
-                btnDelete.Enabled = true;
+                /*btnDelete.Enabled = true;*/
             }
             if (dgvType.SelectedRows.Count > 0)
             {
@@ -102,7 +102,7 @@ namespace Do_An_Quan_ly_kho
             }
 
             btnEdit.Enabled = false;
-            btnDelete.Enabled = false;
+            /*btnDelete.Enabled = false;*/
         }
 
         private void dgvType_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -149,43 +149,6 @@ namespace Do_An_Quan_ly_kho
                     break;
             }
             clearInput();
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            string TenHangHoa = txtTypeName.Text.Trim();
-            if (string.IsNullOrEmpty(TenHangHoa))
-            {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (dgvType.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Vui lòng chọn một dòng để xóa", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            var selectedRow = dgvType.SelectedRows[0];
-            int id = (int)selectedRow.Cells["MaDanhMuc"].Value;
-            var rs = danhmuc.Delete(id);
-            if (rs != null)
-            {
-                switch (rs.ErrCode)
-                {
-                    case EnumErrCode.Error:
-                        MessageBox.Show(rs.ErrDesc, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
-
-                    case EnumErrCode.InvalidInput:
-                        MessageBox.Show(rs.ErrDesc, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
-
-                    case EnumErrCode.Success:
-                        MessageBox.Show(rs.ErrDesc, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        frmLoaiHangHoa_Load(sender, e); 
-                        clearInput();
-                        break;
-                }
-            }
         }
 
         private void btnRefesh_Click(object sender, EventArgs e)
