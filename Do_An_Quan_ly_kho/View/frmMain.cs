@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Do_An_Quan_ly_kho.Controller;
 using Do_An_Quan_ly_kho.Model.DTOs;
+using Do_An_Quan_ly_kho.View;
 using Do_An_Quan_ly_kho.View.PhieuNhap;
 using Do_An_Quan_ly_kho.View.PhieuXuat;
 using WinFormDemo;
@@ -291,6 +292,12 @@ namespace Do_An_Quan_ly_kho
         private void totalUser_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DoiMk t = new DoiMk();
+            t.Show();
         }
     }
 }

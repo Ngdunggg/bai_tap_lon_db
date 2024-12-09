@@ -12,7 +12,7 @@ using WinFormDemo;
 
 namespace Do_An_Quan_ly_kho.Controller
 {
-    internal class LoginController
+    public class LoginController
     {
         public static int userId;
         public static string role = "";
